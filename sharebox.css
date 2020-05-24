@@ -1,0 +1,85 @@
+/* ------ share box styling ------ */
+
+#share-section{
+	box-sizing: border-box;
+	z-index: 9999;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	align-items: center;
+	position: fixed;
+	top: 33.33%;
+	bottom: 33.33%;
+	left: 0;
+	margin: 0;
+	padding: 0;
+	transform: translateX(-45px);
+	transition: 0.25s linear;
+}
+
+#share-box{
+	width: 45px;
+	height: fit-content;
+	transition: 0.25s linear;
+}
+
+#share-box:hover{
+	width: 90px;
+}
+
+.share-fig{
+	display: block;
+	padding: 0;
+	margin: 0;
+}
+
+.share-img{
+	object-fit: contain;
+	object-position: right;
+	cursor: pointer;
+	padding: 0;
+	margin: 0;
+	width: 45px;
+	height: 45px;
+	transition: 0.25s linear;
+}
+
+.share-img:hover{
+	width: 90px;
+}
+
+#fb-img{
+	background: #4267b2;
+}
+
+#tw-img{
+	background: #1da1f2;
+}
+
+#ig-img{
+	background: orangered;
+}
+
+#ws-img{
+	background: #4FCE5D;
+}
+
+#share-icon{
+	transition: 0.25s linear;
+	opacity: 0.5;
+	width: 40px;
+	height: 40px;
+}
+
+#share-icon:hover{
+	opacity: 1;
+}
+
+#share-icon-fig{
+	display: block;
+	margin-left: 4px;
+}
+
+#share-icon-div{
+	transition: 0.25s linear;
+}
