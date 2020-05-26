@@ -7,7 +7,7 @@ A free, minimalist and lightweight HTML-JavaScript based social-media content sh
 * Load Sharebox's **CSS** styles into your HTML page's `<head>` section\
       _Example:_ 
   ```html
-      <link rel="stylesheet" type="text/css" href="path/to/sharebox.css">
+      <link rel="stylesheet" type="text/css" href="path/to/styles/sharebox.css">
   ```
 * Load Sharebox's **JavaScript** file asynchronously into your HTML page's `<head>` section\
       _Example:_
