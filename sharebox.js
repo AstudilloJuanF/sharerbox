@@ -16,7 +16,7 @@
 	shareIcon.addEventListener('click', flipIcon);
 
 
-// Setting share links for socialmedia
+// Setting sharing links for social-media
 
 	var fbLink = document.getElementById('fb-link');
 	var twLink = document.getElementById('tw-link');
