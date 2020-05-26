@@ -1,4 +1,4 @@
-# sharebox
+# Sharebox
 A free, minimalist and lightweight HTML-JavaScript based social-media share section for websites
 
 # Setup
