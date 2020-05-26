@@ -1,5 +1,5 @@
 # Sharebox
-A free, minimalist and lightweight HTML-JavaScript based social-media share section for websites
+A free, minimalist and lightweight HTML-JavaScript based social-media content sharing section for websites
 
 # Setup
 * Integrate Sharebox's HTML code into your webpages
