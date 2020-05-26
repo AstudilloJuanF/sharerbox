@@ -2,8 +2,8 @@
 A free, minimalist and lightweight HTML-JavaScript based social-media content sharing section for websites
 
 # Setup
-* Integrate Sharebox's HTML code into your webpages.
-* Load the CSS styles and JavaScript file into the <head> section of your HTML pages.
-  (make sure of loading JavaScript asynchronously).
+* Integrate Sharebox's <b>HTML</b> code into your website pages.
+* Load the <b>CSS</b> styles and <b>JavaScript</b> file into the `<head>` section of your HTML pages,<br>
+  <i>make sure the <b>JavaScript</b> file is loaded asynchronously</i>
 
-* Done, your Sharebox is now enabled.
+* Done, Sharebox is now enabled.
