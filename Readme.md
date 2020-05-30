@@ -39,17 +39,13 @@ Sharebox supports three ways of customization:
 To customize sharebox options you only need to pass them into ```sharebox()``` function as strings separated by commas\
 
 	Example:\
-	```html
-		<script>
-			window.onload = function(){
-
-
-				// Arguments order: Position, Color, Visibility, Custom Message
-				sharebox( 'left', 'black', true, 'custom message or description goes here (optional)' );
-
-
-			};
-		</script>
+```html
+	<script>
+		window.onload = function(){
+			// Arguments order: Position, Color, Visibility, Custom Message
+			sharebox( 'left', 'black', true, 'custom message or description goes here (optional)' );
+		};
+	</script>
 	```
 
 Author        |
