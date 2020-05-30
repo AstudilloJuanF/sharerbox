@@ -46,7 +46,7 @@ Example:\
 			sharebox( 'left', 'black', true, 'custom message or description goes here (optional)' );
 		};
 	</script>
-	```
+```
 
 Author        |
 --------------|
