@@ -29,8 +29,8 @@ A Free minimalist and lightweight JavaScript-based social-media sharer for websi
 
 Sharebox supports three ways of customization:
 
-* **Position:** ```left``` or ```right``` _(default)_
-* **Color:** color name _(Black by default)_
+* **Position:** ```'left'``` or ```'right'``` _(default)_
+* **Color:** ```'color name'``` _(Black by default)_
 * **Visibility:** _(hidden by default)_ ```'visible'```, ```'yes'``` or ```true``` to enable default visibility;
 * **Description:** Sharebox lets you choose an optional text description of your site for social-media
 
