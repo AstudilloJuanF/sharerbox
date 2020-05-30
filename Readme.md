@@ -38,7 +38,7 @@ Sharebox supports three ways of customization:
 
 To customize sharebox options you only need to pass them into ```sharebox()``` function as strings separated by commas\
 
-	Example:\
+Example:\
 ```html
 	<script>
 		window.onload = function(){
