@@ -5,7 +5,7 @@ A Free minimalist and lightweight JavaScript-based social-media sharer for websi
 ## Installation:
 
 1. Download and store Sharebox's **JavaScript file** on your server\
-2. Asynchronously load the script inside your desired webpage's **HTML** ```<head>``` tag using the ```asnc``` attribute\
+2. Asynchronously load the script inside your desired webpage's **HTML** ```<head>``` tag using the ```async``` attribute\
 
 	Example:\
 	```html
