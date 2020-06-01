@@ -7,14 +7,14 @@ Free minimalist and lightweight JavaScript-based social-media sharer for website
 **1.** Download and store Sharebox's **JavaScript File** on your server.
 **2.** Asynchronously load the script inside your desired webpage's **HTML** `<head>` tag using the `async` attribute.
 
-	Example:
+Example:
 ```html
 <script type="application/javascript" src="path/to/sharebox.js" async></script>
 ```
 
 **3.** Copy this code snippet anywhere inside ~~or after~~ your **HTML** page's ```<body>``` tag.
 
-	Example:
+Example:
 ```html
 <script>
 	window.onload = function(){
