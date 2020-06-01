@@ -7,7 +7,7 @@
        	*											*
 	* 	   	   +----------------------------------------------------+		*
 	* 		   |					                |		*
-	*		   |	      Copyright © 2020 Juan Astudillo	 	|		*
+	*		   |	       Copyright © 2020 Juan Astudillo	 	|		*
 	*        	   |						        |		*
 	* 		   |	     <astudillojuanfrancisco@gmail.com> 	|		*
 	*		   +----------------------------------------------------+		*
