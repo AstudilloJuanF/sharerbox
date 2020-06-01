@@ -40,14 +40,14 @@ To customize Sharebox you only need to pass these options into `sharebox()` func
 
 Example:
 ```html
-	<script>
-		window.onload = function(){
-		
-				// Arguments order: Position, Color, Visibility, Custom Message
-			sharebox( 'left', 'black', true, 'custom message or description goes here (optional)' );
-		
-		};
-	</script>
+<script>
+	window.onload = function(){
+
+			// Arguments order: Position, Color, Visibility, Custom Message
+		sharebox('left', 'black', true, 'custom message or description goes here (optional)');
+
+	};
+</script>
 ```
 
 |Author        |
