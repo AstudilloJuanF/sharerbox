@@ -4,17 +4,17 @@ A Free minimalist and lightweight JavaScript-based social-media sharer for websi
 
 ## Installation:
 
-1. Download and store Sharebox's **JavaScript file** on your server\
-2. Asynchronously load the script inside your desired webpage's **HTML** `<head>` tag using the `async` attribute\
+1. Download and store Sharebox's **JavaScript file** on your server.
+2. Asynchronously load the script inside your desired webpage's **HTML** `<head>` tag using the `async` attribute.
 
-	Example:\
+	Example:
 	```html
 	<script type="application/javascript" src="path/to/sharebox.js" async></script>
 	```
 
-3. Copy this code snippet anywhere inside ~~or after~~ your **HTML** page's ```<body>``` tag\
+3. Copy this code snippet anywhere inside ~~or after~~ your **HTML** page's ```<body>``` tag.
 
-	Example:\
+	Example:
 	```html
 	<script>
 		window.onload = function(){
@@ -22,12 +22,12 @@ A Free minimalist and lightweight JavaScript-based social-media sharer for websi
 		};
 	</script>
 	```
-4. Save Changes\
-* All done, sharebox is now enabled for your site\
+4. Save Changes
+* All done, sharebox is now enabled for your site.
 
 ## Options:
 
-Sharebox supports three ways of customization:
+Sharebox supports four options of customization:
 
 * **Position:** `'left'` or `'right'` _(default)_
 * **Color:** `'color name'` _(Black by default)_
