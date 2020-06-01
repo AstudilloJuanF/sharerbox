@@ -1,7 +1,7 @@
 
-							      /* Sharebox */
+					       /* Sharebox */
 
-					/* Version: 0.0.1; Author: Juan Astudillo */
+				/* Version: 0.0.1; Author: Juan Astudillo */
 
        /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 	* 	   	   +----------------------------------------------------+		*
