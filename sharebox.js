@@ -1,6 +1,37 @@
-/* Sharebox Version: 0.0.1;
- * Author: Juan Astudillo; */
 
+							      /* Sharebox */
+
+					/* Version: 0.0.1; Author: Juan Astudillo */
+
+   /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+	* 	   	   +-----------------------------------------------------+			*
+	* 		   |													 |		 	*
+	*		   |		   Copyright 2020 Juan Astudillo		 	 |			*
+	*          |											         |			*
+	* 		   |		<astudillojuanfrancisco@gmail.com> 		 	 |			*
+	*		   +-----------------------------------------------------+			*
+	* 																	        *
+	* 	 This program is free software; you can redistribute it and/or modify 	*
+	* 	it under the terms of the GNU General Public License as published by	*
+	* 	the Free Software Foundation; either version 2 of the License, or		*
+	* 	(at your option) any later version.										*
+	*																			*
+	* 	 This program is distributed in the hope that it will be useful,		*
+	* 	but WITHOUT ANY WARRANTY; without even the implied warranty of			*
+	* 	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the			*
+	* 	GNU General Public License for more details.							*
+	*																			*
+	* 	 You should have received a copy of the GNU General Public License		*
+	* 	along with this program; if not, write to the Free Software				*
+	* 	Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,				*
+	* 	MA 02110-1301, USA.														*
+	* 																			*
+	* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+
+
+
+							/* Script */
 
 
 // Inserting HTML markup and CSS Styles into the document
@@ -80,6 +111,7 @@
 		opacity: 0.5;
 		width: 40px;
 		height: 40px;
+		transform: none;
 		transition: 0.25s linear;
 	}
 
@@ -98,6 +130,7 @@
 </style>
 <section id="sharebox-section">
 	<div id="sharebox-social-icons-box">
+		<!-- Facebook Icon -->
 		<object class="sharebox-icon-fig" id="fb-fig">
 			<a class="sharebox-socialmedia-link" id="fb-link" href="" target="_blank">
 				<svg class="sharebox-icon" id="fb-icon" viewBox="0 0 72 72" xmlns="http://www.w3.org/2000/svg">
@@ -112,6 +145,7 @@
 				</svg>
 			</a>
 		</object>
+		<!-- Twitter Icon -->
 		<object class="sharebox-icon-fig" id="tw-fig">
 			<a class="sharebox-socialmedia-link" id="tweet-link" href="" target="_blank">
 				<svg class="sharebox-icon" id="tw-icon" viewBox="0 0 72 72" xmlns="http://www.w3.org/2000/svg">
@@ -128,6 +162,7 @@
 		</object>
 	</div>
 	<div id="sharebox-share-icon-wrap">
+		<!-- Share Icon -->
 		<object class="sharebox-icon-fig" id="sharebox-share-icon-fig">
 			<svg class="sharebox-icon" id="sharebox-share-icon" enable-background="new 0 0 57.884 57.884" viewBox="0 0 57.884 57.884" xml:space="preserve" xmlns="http://www.w3.org/2000/svg">
 				<path d="m13.613 21.662c2.7441 0 5.2047-1.1826 6.921-3.06l14.909 7.1712c-.3564.9927-.5598 2.0538-.5598 3.1689 0 1.1133.2043 2.1762.5598 3.1689l-14.909 7.1694c-1.7163-1.8765-4.1796-3.0618-6.921-3.0618-5.1831 0-9.3861 4.2021-9.3861 9.3852 0 5.184 4.203 9.3861 9.3861 9.3861 5.184 0 9.3861-4.2021 9.3861-9.3861 0-.4968-.0504-.981-.1251-1.4571l15.872-7.6311c1.5516 1.134 3.4578 1.8108 5.5269 1.8108 5.1831 0 9.3852-4.2012 9.3852-9.3825 0-5.1858-4.2021-9.387-9.3852-9.387-2.0691 0-3.9753.6768-5.526 1.8126l-15.871-7.6329c.0738-.4761.1251-.9603.1251-1.4571 0-5.184-4.203-9.3852-9.387-9.3852-5.1831 0-9.3852 4.2012-9.3852 9.3852 0 5.1831 4.2012 9.3825 9.3843 9.3825z" stroke-width=".9"/>
@@ -154,21 +189,21 @@
 	var currentUrl = encodeURIComponent(document.URL);
 
 
-// function for setting Sharebox's preferences;
+// function for Sharebox's preferences customization;
 
-	function sharebox(position = 'right', color = 'black', visibility = 'no', message= ''){
+	function sharebox(position = 'right', color = 'black', visibility = 'hidden', message = ''){
 
 
 
-		// Custom message for social-media
+		// Custom default message or description for social-media publications
 		var customMessage = encodeURIComponent(message);
 
 
-		/* Unfortunately Facebook's sharer API does not support URLs that includes hyphens or underscores yet,
-		 * this function handles the issue by addressing the user's web domain instead */
+		/* Unfortunately Facebook's sharer API still does not support URLs with hyphens or underscores,
+		 * this function handles the issue by sharing the user's main website instead */
 		var fbShareURL = function(){
 			if(RegExp(/[\-_]+/gi).test(currentUrl) === true){
-				return 'https://' + document.domain;
+				return `https://${document.domain}`;
 			}else{
 				return currentUrl;
 			}
@@ -184,12 +219,12 @@
 
 
 
-		// Sets icon color
+		// Sets the share icon color
 		if(color){
 			shareIcon.style.fill = color;
 		}
 
-		// Sets icons position
+		// Sets sharebox icons position to the right
 		if(position === 'right'){
 
 			shareIconWrap.remove();
@@ -201,6 +236,7 @@
 
 		}
 
+		// Sets sharebox icons position to the left
 		if(position === 'left'){
 
 			shareIconWrap.remove();
@@ -211,7 +247,7 @@
 
 		}
 
-		//Setting visibility
+		// Setting default visibility (hidden by default)
 		if(visibility === 'yes' || visibility === true || visibility === 'visible'){
 			flipIcon();
 		}
@@ -219,7 +255,7 @@
 	}
 
 
-// handling icon interaction
+// handling icons interaction
 	function flipIcon(){
 
 		if(shareboxContainer.style.left === 'unset'){
