@@ -31,7 +31,7 @@ Sharebox 0.0.1 supports four customization options:
 
 * **Position:** `'left'` or `'right'` _(default)_
 * **Color:** `'color name'` _(Black by default)_
-* **Visibility:** _(hidden by default)_ `'visible'`, `'yes'` or `true` to enable default visibility
+* **Visibility:** `'visible'`, `'yes'` or `true` to enable default visibility _(hidden by default)_
 * **Description:** Sharebox lets you choose an optional message or site description for social-media
 
 ### Customizing options
