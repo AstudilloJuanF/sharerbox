@@ -18,7 +18,7 @@ A Free minimalist and lightweight JavaScript-based social-media sharer for websi
 	```html
 	<script>
 		window.onload = function(){
-			sharebox( // customization options go here, if leaved blank options are set to default);
+			sharebox( // customization options go here, if empty options are set to default);
 		};
 	</script>
 	```
