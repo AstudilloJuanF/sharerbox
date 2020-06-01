@@ -1,6 +1,6 @@
 # Sharebox
 
-A Free minimalist and lightweight JavaScript-based social-media sharer for websites.
+Free minimalist and lightweight JavaScript-based social-media sharer for websites.
 
 ## Installation:
 
