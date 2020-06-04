@@ -1,5 +1,5 @@
 /*
-					       Sharebox
+					       Sharerbox
 
 				Version: 0.0.1; Author: Juan Astudillo
 
@@ -31,7 +31,7 @@
 	(function insertHTMLContent(){
 
 		var content = `<style type="text/css">
-	#sharebox-section{
+	#sharerbox-section{
 		box-sizing: border-box;
 		z-index: 9999;
 		display: flex;
@@ -49,7 +49,7 @@
 		transition: 0.25s linear;
 	}
 
-	#sharebox-social-icons-box{
+	#sharerbox-social-icons-box{
 		display: flex;
 		flex-direction: column;
 		flew-wrap: nowrap;
@@ -59,24 +59,24 @@
 		transition: 0.25s linear;
 	}
 
-	#sharebox-social-icons-box:hover{
+	#sharerbox-social-icons-box:hover{
 		width: 90px;
 	}
 
-	.sharebox-socialmedia-link{
+	.sharerbox-socialmedia-link{
 		display: block;
 		margin: 0;
 		padding: 0;
 		height: 45px
 	}
 
-	.sharebox-icon-fig{
+	.sharerbox-icon-fig{
 		display: block;
 		padding: 0;
 		margin: 0;
 	}
 
-	.sharebox-icon{
+	.sharerbox-icon{
 		object-fit: contain;
 		object-position: right;
 		cursor: pointer;
@@ -87,7 +87,7 @@
 		transition: 0.25s linear;
 	}
 
-	.sharebox-icon:hover{
+	.sharerbox-icon:hover{
 		width: 90px;
 	}
 
@@ -99,7 +99,7 @@
 		background: #1da1f2;
 	}
 
-	#sharebox-share-icon{
+	#sharerbox-share-icon{
 		opacity: 0.5;
 		width: 40px;
 		height: 40px;
@@ -107,25 +107,25 @@
 		transition: 0.25s linear;
 	}
 
-	#sharebox-share-icon:hover{
+	#sharerbox-share-icon:hover{
 		opacity: 1;
 	}
 
-	#sharebox-share-icon-fig{
+	#sharerbox-share-icon-fig{
 		display: block;
 		margin-left: 4px;
 	}
 
-	#sharebox-share-icon-wrap{
+	#sharerbox-share-icon-wrap{
 		transition: 0.25s linear;
 	}
 </style>
-<section id="sharebox-section">
-	<div id="sharebox-social-icons-box">
+<section id="sharerbox-section">
+	<div id="sharerbox-social-icons-box">
 		<!-- Facebook Icon -->
-		<object class="sharebox-icon-fig" id="fb-fig">
-			<a class="sharebox-socialmedia-link" id="fb-link" href="" target="_blank">
-				<svg class="sharebox-icon" id="fb-icon" viewBox="0 0 72 72" xmlns="http://www.w3.org/2000/svg">
+		<object class="sharerbox-icon-fig" id="fb-fig">
+			<a class="sharerbox-socialmedia-link" id="fb-link" href="" target="_blank">
+				<svg class="sharerbox-icon" id="fb-icon" viewBox="0 0 72 72" xmlns="http://www.w3.org/2000/svg">
 					<g fill="none" fill-rule="evenodd">
 						<g id="Social-Icons---Circle-Black" transform="translate(-152,-43)">
 							<g id="Facebook" transform="translate(152,43)">
@@ -138,9 +138,9 @@
 			</a>
 		</object>
 		<!-- Twitter Icon -->
-		<object class="sharebox-icon-fig" id="tw-fig">
-			<a class="sharebox-socialmedia-link" id="tweet-link" href="" target="_blank">
-				<svg class="sharebox-icon" id="tw-icon" viewBox="0 0 72 72" xmlns="http://www.w3.org/2000/svg">
+		<object class="sharerbox-icon-fig" id="tw-fig">
+			<a class="sharerbox-socialmedia-link" id="tweet-link" href="" target="_blank">
+				<svg class="sharerbox-icon" id="tw-icon" viewBox="0 0 72 72" xmlns="http://www.w3.org/2000/svg">
 					<g fill="none" fill-rule="evenodd">
 						<g id="Social-Icons---Squared-Black" transform="translate(-264 -43)">
 							<g id="Twitter" transform="translate(264 43)">
@@ -153,10 +153,10 @@
 			</a>
 		</object>
 	</div>
-	<div id="sharebox-share-icon-wrap">
+	<div id="sharerbox-share-icon-wrap">
 		<!-- Share Icon -->
-		<object class="sharebox-icon-fig" id="sharebox-share-icon-fig">
-			<svg class="sharebox-icon" id="sharebox-share-icon" enable-background="new 0 0 57.884 57.884" viewBox="0 0 57.884 57.884" xml:space="preserve" xmlns="http://www.w3.org/2000/svg">
+		<object class="sharerbox-icon-fig" id="sharerbox-share-icon-fig">
+			<svg class="sharerbox-icon" id="sharerbox-share-icon" enable-background="new 0 0 57.884 57.884" viewBox="0 0 57.884 57.884" xml:space="preserve" xmlns="http://www.w3.org/2000/svg">
 				<path d="m13.613 21.662c2.7441 0 5.2047-1.1826 6.921-3.06l14.909 7.1712c-.3564.9927-.5598 2.0538-.5598 3.1689 0 1.1133.2043 2.1762.5598 3.1689l-14.909 7.1694c-1.7163-1.8765-4.1796-3.0618-6.921-3.0618-5.1831 0-9.3861 4.2021-9.3861 9.3852 0 5.184 4.203 9.3861 9.3861 9.3861 5.184 0 9.3861-4.2021 9.3861-9.3861 0-.4968-.0504-.981-.1251-1.4571l15.872-7.6311c1.5516 1.134 3.4578 1.8108 5.5269 1.8108 5.1831 0 9.3852-4.2012 9.3852-9.3825 0-5.1858-4.2021-9.387-9.3852-9.387-2.0691 0-3.9753.6768-5.526 1.8126l-15.871-7.6329c.0738-.4761.1251-.9603.1251-1.4571 0-5.184-4.203-9.3852-9.387-9.3852-5.1831 0-9.3852 4.2012-9.3852 9.3852 0 5.1831 4.2012 9.3825 9.3843 9.3825z" stroke-width=".9"/>
 			</svg>
 		</object>
@@ -169,10 +169,10 @@
 
 // icon variables;
 
-	var shareboxContainer =  document.getElementById('sharebox-section');
-	var socialIconsWrap = document.getElementById('sharebox-social-icons-box');
-	var shareIconWrap = document.getElementById('sharebox-share-icon-wrap');
-	var shareIcon = document.getElementById('sharebox-share-icon');
+	var sharerboxContainer =  document.getElementById('sharerbox-section');
+	var socialIconsWrap = document.getElementById('sharerbox-social-icons-box');
+	var shareIconWrap = document.getElementById('sharerbox-share-icon-wrap');
+	var shareIcon = document.getElementById('sharerbox-share-icon');
 
 	// Link elements variables
 
@@ -181,9 +181,9 @@
 	var currentUrl = encodeURIComponent(document.URL);
 
 
-// function for Sharebox's preferences customization;
+// function for Sharerbox's preferences customization;
 
-	function sharebox(position = 'right', color = 'black', visibility = 'hidden', message = ''){
+	function sharerbox(position = 'right', color = 'black', visibility = 'hidden', message = ''){
 
 
 
@@ -216,25 +216,25 @@
 			shareIcon.style.fill = color;
 		}
 
-		// Sets sharebox icons position to the right
+		// Sets sharerbox icons position to the right
 		if(position === 'right'){
 
 			shareIconWrap.remove();
-			shareboxContainer.insertAdjacentElement('afterbegin', shareIconWrap);
+			sharerboxContainer.insertAdjacentElement('afterbegin', shareIconWrap);
 
-			shareboxContainer.style.cssText = 'left: unset; right: 0px; transform: translateX(45px)';
+			sharerboxContainer.style.cssText = 'left: unset; right: 0px; transform: translateX(45px)';
 			socialIconsWrap.style.alignItems = 'flex-end';
 			shareIcon.style.transform = 'rotateY(180deg)';
 
 		}
 
-		// Sets sharebox icons position to the left
+		// Sets sharerbox icons position to the left
 		if(position === 'left'){
 
 			shareIconWrap.remove();
-			shareboxContainer.appendChild(shareIconWrap);
+			sharerboxContainer.appendChild(shareIconWrap);
 
-			shareboxContainer.style.cssText = 'left: 0px; right: unset; transform: translateX(-45px)';
+			sharerboxContainer.style.cssText = 'left: 0px; right: unset; transform: translateX(-45px)';
 			socialIconsWrap.style.alignItems = 'flex-start';
 
 		}
@@ -250,24 +250,24 @@
 // handling icons interaction
 	function flipIcon(){
 
-		if(shareboxContainer.style.left === 'unset'){
+		if(sharerboxContainer.style.left === 'unset'){
 
 			if(shareIcon.style.transform === 'none'){
 				shareIcon.style.transform = 'rotateY(180deg)';
-				shareboxContainer.style.transform = 'translateX(45px)';
+				sharerboxContainer.style.transform = 'translateX(45px)';
 			}else{
 				shareIcon.style.transform = 'none';
-				shareboxContainer.style.transform = 'none';
+				sharerboxContainer.style.transform = 'none';
 			}
 
-		}else if(shareboxContainer.style.left === '0px'){
+		}else if(sharerboxContainer.style.left === '0px'){
 
 			if(shareIcon.style.transform === 'rotateY(180deg)'){
 				shareIcon.style.transform = 'none';
-				shareboxContainer.style.transform = 'translateX(-45px)';
+				sharerboxContainer.style.transform = 'translateX(-45px)';
 			}else{
 				shareIcon.style.transform = 'rotateY(180deg)';
-				shareboxContainer.style.transform = 'none';
+				sharerboxContainer.style.transform = 'none';
 			}
 
 		}
