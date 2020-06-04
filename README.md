@@ -1,8 +1,8 @@
-<img height="250" src="https://pbs.twimg.com/media/EZpSKM3XgAEjWtD.jpg"> 
-
 # Sharerbox
 
 Free minimalist and lightweight JavaScript-based social-media sharer for websites.
+
+<img height="250" src="https://pbs.twimg.com/media/EZpSKM3XgAEjWtD.jpg"> 
 
 ## Installation:
 
