@@ -2,6 +2,8 @@
 
 Free minimalist and lightweight JavaScript-based social-media sharer for websites.
 
+<img height="250" src="https://pbs.twimg.com/media/EZpSKM3XgAEjWtD.jpg"> 
+
 ## Installation:
 
 **1.** Download and store Sharerbox's **JavaScript File** on your server.
