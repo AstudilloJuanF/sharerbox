@@ -9,21 +9,21 @@ Free minimalist and lightweight JavaScript-based social-media sharer for website
 1. Download and store Sharerbox's **JavaScript File** on your server.
 2. Asynchronously load the script inside your desired webpage's **HTML** `<head>` tag using the `async` attribute.
 
-Example:
-```html
-<script type="application/javascript" src="path/to/sharerbox.js" async></script>
-```
+	Example:
+	```html
+	<script type="application/javascript" src="path/to/sharerbox.js" async></script>
+	```
 
-3. Copy this code snippet anywhere inside ~~or after~~ your **HTML** page's ```<body>``` tag.
+3. Copy this code snippet anywhere inside or after your **HTML** page's ```<body>``` tag.
 
-Example:
-```html
-<script>
-	window.onload = function(){
-		sharerbox( // customization options go here, if empty options are set to default);
-	};
-</script>
-```
+	Example:
+	```html
+	<script>
+		window.onload = function(){
+			sharerbox( // customization options go here, if empty options are set to default);
+		};
+	</script>
+	```
 4. Save Changes
 * All done, sharerbox is now enabled for your site.
 
@@ -44,17 +44,17 @@ Example:
 ```html
 <script>
 	window.onload = function(){
-
 			// Arguments order: Position, Color, Visibility, Custom Message
 		sharerbox('left', 'black', true, 'custom message or description goes here (optional)');
-
 	};
 </script>
 ```
 
 ## Support
 
-Currectly Sharerbox supports Reddit, Whatsapp, Twitter and Facebook by default
+Reddit, Whatsapp, Twitter and Facebook by default
+
+
 
 |Author        |
 |--------------|
