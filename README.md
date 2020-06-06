@@ -52,6 +52,10 @@ Example:
 </script>
 ```
 
+##Support
+
+Currectly Sharerbox supports Reddit, Whatsapp, Twitter and Facebook by default
+
 |Author        |
 |--------------|
 |Juan Astudillo|
