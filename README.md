@@ -2,7 +2,15 @@
 
 Free minimalist and lightweight JavaScript-based social-media sharer for websites.
 
-<img height="250" src="https://pbs.twimg.com/media/EZpSKM3XgAEjWtD.jpg"> 
+<img height="250" src="https://pbs.twimg.com/media/EZpSKM3XgAEjWtD.jpg">
+
+## Description
+
+Sharerbox is a minimalistic social-media sharebar developed to provide simple social-media integration for websites without negatively affecting sites loading speeds calling for heavy or bulky external API requests
+
+### Support
+
+Sharerbox supports Reddit, Whatsapp, Twitter and Facebook by default
 
 ## Installation:
 
@@ -49,11 +57,6 @@ Example:
 	};
 </script>
 ```
-
-## Support
-
-Reddit, Whatsapp, Twitter and Facebook by default
-
 
 
 |Author        |
