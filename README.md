@@ -10,7 +10,7 @@ Sharerbox is a minimalistic social-media sharebar developed to provide simple so
 
 ### Support
 
-Sharerbox supports Reddit, Whatsapp, Twitter and Facebook by default
+Sharerbox supports Facebook, Twitter, Whatsapp, Reddit and LinkedIn by default
 
 ## Installation:
 
