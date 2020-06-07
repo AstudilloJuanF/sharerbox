@@ -1,24 +1,22 @@
 /*
-					      Sharerbox
+					        	    Sharerbox
 
-				Version: 0.0.1; Author: Juan Astudillo
+					  Version: 0.0.1; Author: Juan Astudillo
 
 	* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
-   	* 								            *
-	*  	   +-----------------------------------------------------+	    *																	*
-	*	   |		 Copyright © 2020 Juan Astudillo	 |	    *
-	*      	   |						       	 |	    *
-	* 	   |		<astudillojuanfrancisco@gmail.com>	 |	    *
-	*	   +-----------------------------------------------------+	    *
-	* 									    *
+    * 																	        *
+	* 	   	   +-----------------------------------------------------+			*																	*
+	*		   |			 Copyright © 2020 Juan Astudillo		 |			*
+	*          |											         |			*
+	* 		   |			<astudillojuanfrancisco@gmail.com> 		 |			*
+	*		   +-----------------------------------------------------+			*
+	* 																			*
 	* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 
 
 */
 
-
-
-					/* Script */
+									/* Script */
 
 
 // Inserting HTML markup and CSS Styles into the document
@@ -72,6 +70,7 @@
 	}
 
 	.sharerbox-icon{
+		display: block;
 		object-fit: contain;
 		object-position: right;
 		cursor: pointer;
@@ -82,7 +81,7 @@
 		transition: 0.25s linear;
 	}
 
-	.sharerbox-icon:hover, #copy-link-status:hover ~ .sharerbox-icon{
+	.sharerbox-icon:hover{
 		width: 90px;
 	}
 
@@ -104,22 +103,24 @@
 	}
 
 	#copy-link-fig{
+		margin: 5px 2.5px 0 2.5px;
 		position: relative;
-		background: slategray;
 	}
 
-	#copy-link-status{
-		display: none;
-		position: absolute;
-		top: 0;
-		left: 0;
-		right: 0;
-		bottom: 0;
-		cursor: pointer;
-		font-family: arial;
-		font-size: 0.85rem;
-		color: white;
-		text-shadow: 0 0 8px black;
+	#copy-link-icon{
+		background: darkgray;
+		width: 40px;
+		height: 40px;
+		border-radius: 100%;
+		box-shadow: 0 0 3px rgb(0,0,0, 1);
+		transition: 0.2s linear;
+		filter: brightness(95%);
+
+	}
+
+	#copy-link-icon:hover{
+		transform: scale(1.05);
+		filter: none;
 	}
 
 	#copy-link-fig:hover #copy-link-status{
@@ -214,12 +215,9 @@
 		</object>
 		<!--Copy Link Icon-->
 		<object class="sharerbox-icon-fig" id="copy-link-fig">
-			<p id="copy-link-status">Copy</p>
-			<svg class="sharerbox-icon" id="copy-link-icon" enable-background="new 0 0 195.085 195.085" version="1.1" viewBox="0 0 195.08 195.08" xml:space="preserve" xmlns="http://www.w3.org/2000/svg">
-				<g transform="matrix(.81 0 0 .81 18.533 18.533)">
-					<path d="m179.62 15.453c-.051-.05-.102-.1-.154-.149-18.689-18.549-48.477-20.463-69.37-4.441-2.091 1.599-3.776 3.053-5.302 4.575-.044.044-.087.088-.13.133l-33.437 33.441c-2.929 2.929-2.929 7.678.001 10.606 2.93 2.93 7.679 2.929 10.606-.001l33.561-33.566c.035-.035.069-.07.104-.105 1.023-1.01 2.205-2.02 3.715-3.174 15.008-11.508 36.411-10.098 49.789 3.281.044.044.089.088.134.131 14.652 14.786 14.611 38.742-.124 53.483l-33.559 33.563c-2.929 2.929-2.929 7.678.001 10.606 1.465 1.464 3.384 2.196 5.303 2.196s3.839-.732 5.304-2.197l33.56-33.563c20.622-20.631 20.622-54.195-.002-74.819z" fill="whitesmoke"/>
-					<path d="m113.23 135.44-33.541 33.542c-.066.067-.132.136-.196.205-3.708 3.648-8.059 6.449-12.945 8.333-13.995 5.418-29.888 2.07-40.481-8.524-14.768-14.784-14.768-38.84 0-53.619l33.557-33.544c1.406-1.407 2.197-3.315 2.197-5.305v-.013c0-4.143-3.357-7.494-7.5-7.494-2.135 0-4.062.895-5.428 2.328l-33.435 33.422c-20.61 20.628-20.612 54.195-.002 74.828 10.095 10.097 23.628 15.479 37.411 15.479 6.414-.001 12.884-1.167 19.084-3.566 6.922-2.667 13.088-6.67 18.326-11.896.076-.075.15-.153.223-.232l33.337-33.337c2.929-2.93 2.929-7.678-.001-10.607-2.927-2.928-7.676-2.928-10.606 0z" fill="whitesmoke"/>
-					<path d="m59.15 135.91c1.465 1.465 3.384 2.197 5.304 2.197 1.919 0 3.839-.732 5.303-2.196l66.164-66.161c2.93-2.929 2.93-7.678.001-10.606-2.929-2.93-7.678-2.929-10.606-.001l-66.164 66.161c-2.931 2.928-2.931 7.677-.002 10.606z" fill="whitesmoke"/>
+			<svg class="sharerbox-icon" id="copy-link-icon" width="1306.7" height="1306.7" version="1.1" viewBox="0 0 1306.7 1306.7" xmlns="http://www.w3.org/2000/svg">
+				<g transform="matrix(.72 0 0 .72 182.91 182.95)" stroke-width="1.3333">
+					<path d="m276 1305.2c-156.85-5.6678-289.14-155.44-274.46-312.05 3.0514-90.655 57.039-169.42 123.81-226.86 96.762-95.642 190.78-194.45 290.73-286.63 123.19-93.928 316.73-65.832 407.54 59.82 41.534 67.722-62.931 142.52-112.95 80.086-56.083-68.731-171.62-77.594-231.33-9.1253-104.44 103.13-208.85 206.37-310.44 312.3-62.244 81.217-16.29 213.22 83.363 237.62 77.05 26.164 146.49-26.017 193.42-81.698 45.169-44.962 90.243-90.019 135.37-135.03 59.362 28.479 130.65 30.581 191.4 5.0055-100.82 101.14-199.87 204.6-304.94 301.19-55.18 39.774-123.57 60.014-191.51 55.385zm422.67-422.67c-86.799-5.91-177.1-51.029-220.76-127.79-25.856-87.032 99.372-121.7 139.13-48.704 63.476 59.077 171.95 45.731 223.35-22.706 100.71-101.23 204.73-199.5 301-304.94 60.094-84.325 5.6901-214.88-95.131-234.33-64.946-16.126-128.95 18.019-169.05 67.931-50.726 50.146-101.09 100.65-151.63 150.99-59.78-28.583-131.99-30.665-192.91-4.3285 102.81-100.99 201.45-206.65 308.36-303.13 125.11-94.05 321.1-62.214 409.45 67.215 86.1 114.5 69.423 291.05-38.105 386.17-106.09 105.91-210.44 213.88-319.65 316.47-55.652 40.883-125.04 61.84-194.05 57.154z" style="fill:#F7F7F7;"/>
 				</g>
 			</svg>
 		</object>
@@ -252,8 +250,7 @@
 	var wsLink = document.getElementById('ws-link');
 	var redditLink = document.getElementById('reddit-link');
 
-	var copyLink = document.getElementById('copy-link-fig');
-	var copyLinkStatus = document.getElementById('copy-link-status');
+	var copyLink = document.getElementById('copy-link-icon');
 
 	var currentUrl = encodeURIComponent(document.URL);
 
@@ -297,14 +294,15 @@
 			redditLink.href = `https://www.reddit.com/submit/?url=${currentUrl}`
 
 			// Copying URL on clipboard by clicking on the copy link icon
-			copyLink.onclick = function(){
+			function copyURL(){
 				navigator.clipboard.writeText(document.URL);
 
 				// Styling effects
-				copyLink.style.background= 'forestgreen';
-				copyLinkStatus.innerText = 'Copied!';
-				setTimeout(function(){copyLink.style.background = 'slategray'; copyLinkStatus.innerText = 'Copy';}, 2000)
-			};
+				copyLink.style.background = '#2DB82D';
+				setTimeout(function(){copyLink.removeAttribute('style');}, 2000)
+			}
+
+			copyLink.addEventListener('click', copyURL);
 
 		// Sets the share icon color
 		if(color){
@@ -369,3 +367,9 @@
 	}
 
 	shareIcon.addEventListener('click', flipIcon);
+
+
+// Promise
+	var sharerboxLoad = new Promise(function(resolve, reject){
+		resolve('successful promise resolution');
+	});
