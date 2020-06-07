@@ -125,7 +125,7 @@
 		width: 40px;
 		height: 40px;
 		border-radius: 100%;
-		filter: brightness(95%);
+		filter: brightness(90%);
 		box-shadow: 0 0 2.5px rgb(0,0,0, 0.9);
 		transition: 0.15s linear;
 
@@ -133,7 +133,7 @@
 
 	#copy-link-icon:hover{
 		transform: scale(1.05);
-		filter: none;
+		filter: brightness(95%);
 	}
 
 	#copy-link-fig:hover #copy-link-status{
@@ -165,7 +165,7 @@
 		<div id="sharerbox-social-icons-box">
 			<!--Facebook-->
 			<object class="sharerbox-icon-fig" id="fb-fig">
-				<a class="sharerbox-socialmedia-link" id="fb-link" href="" target="_blank">
+				<div class="sharerbox-socialmedia-link" id="fb-link">
 					<svg class="sharerbox-icon" id="fb-icon" viewBox="0 0 72 72" xmlns="http://www.w3.org/2000/svg">
 						<g fill="none" fill-rule="evenodd">
 							<g id="Social-Icons---Circle-Black" transform="translate(-152,-43)">
@@ -176,11 +176,11 @@
 							</g>
 						</g>
 					</svg>
-				</a>
+				</div>
 			</object>
 			<!--Twitter-->
 			<object class="sharerbox-icon-fig" id="tw-fig">
-				<a class="sharerbox-socialmedia-link" id="tweet-link" href="" target="_blank">
+				<div class="sharerbox-socialmedia-link" id="tweet-link">
 					<svg class="sharerbox-icon" id="tw-icon" viewBox="0 0 72 72" xmlns="http://www.w3.org/2000/svg">
 						<g fill="none" fill-rule="evenodd">
 							<g id="Social-Icons---Squared-Black" transform="translate(-264 -43)">
@@ -191,11 +191,11 @@
 							</g>
 						</g>
 					</svg>
-				</a>
+				</div>
 			</object>
 			<!--Whatsapp-->
 			<object class="sharerbox-icon-fig" id="ws-fig">
-				<a class="sharerbox-socialmedia-link" id="ws-link" href="" target="_blank">
+				<div class="sharerbox-socialmedia-link" id="ws-link">
 					<svg class="sharerbox-icon" id="ws-icon" width="1225px" height="1225px" version="1.1" viewBox="-2.73 0 1225 1225" xmlns="http://www.w3.org/2000/svg">
 						<path d="m979.2 241.02c-98.03-98.097-228.37-152.15-367.25-152.21-286.18 0-519.06 232.82-519.17 518.98-.03334 91.473 23.868 180.77 69.296 259.47l-73.654 268.94 275.22-72.167c75.829 41.354 161.21 63.146 248.09 63.181h.22344c286.13 0 519.05-232.85 519.17-519 .047-138.69-53.91-269.09-151.92-367.19zm-367.25 798.54h-.16843c-77.444-.041-153.39-20.833-219.63-60.14l-15.764-9.3452-163.32 42.821 43.605-159.18-10.271-16.319c-43.198-68.687-66.004-148.07-65.972-229.57.0949-237.85 193.67-431.35 431.69-431.35 115.26.0479 223.6 44.977 305.07 126.51 81.472 81.533 126.31 189.92 126.27 305.19-.1008 237.86-193.68 431.39-431.51 431.39z" fill="#e0e0e0" stroke-width=".855"/>
 						<g transform="matrix(.95 0 0 .95 30.478 36.539)" stroke-width=".9">
@@ -204,11 +204,11 @@
 							<path d="m994.19 219.73c-102-102.07-237.64-158.32-382.14-158.38-297.78 0-540.11 242.25-540.23 540.02-.0351 95.183 24.835 188.09 72.105 269.99l-76.64 279.84 286.38-75.094c78.905 43.031 167.74 65.707 258.15 65.742h.2325c297.73 0 540.1-242.3 540.23-540.05.049-144.31-56.095-280-158.08-382.08zm-382.14 830.92h-.1755c-80.585-.042-159.61-21.677-228.54-62.578l-16.404-9.7245-169.95 44.557 45.373-165.64-10.688-16.98c-44.95-71.473-68.681-154.07-68.646-238.88.0981-247.49 201.52-448.84 449.19-448.84 119.94.0495 232.66 46.8 317.45 131.64 84.776 84.839 131.43 197.62 131.39 317.57-.1062 247.5-201.53 448.87-449.01 448.87z" fill="#fff"/>
 						</g>
 					</svg>
-				</a>
+				</div>
 			</object>
 			<!--Reddit-->
 			<object class="sharerbox-icon-fig" id="reddit-fig">
-				<a class="sharerbox-socialmedia-link" id="reddit-link" href="" target="_blank">
+				<div class="sharerbox-socialmedia-link" id="reddit-link">
 					<svg class="sharerbox-icon" id="reddit-icon" xmlns="http://www.w3.org/2000/svg" aria-label="Reddit" role="img" viewBox="0 0 512 512">
 						<rect width="512" height="512" rx="15%" fill="#f40"/>
 						<g fill="#fff"><ellipse cx="256" cy="307" rx="166" ry="117"/>
@@ -225,11 +225,11 @@
 							<circle cx="321" cy="287" r="31"/>
 						</g>
 					</svg>
-				</a>
+				</div>
 			</object>
 			<!--LinkedIn-->
 			<object class="sharerbox-icon-fig" id="linkedin-fig">
-				<a class="sharerbox-socialmedia-link" id="linkedin-link" href="" target="_blank">
+				<div class="sharerbox-socialmedia-link" id="linkedin-link">
 					<svg class="sharerbox-icon" id="linkedin-icon" enable-background="new 0 0 512 512" version="1.1" viewBox="0 0 512 512" xml:space="preserve" xmlns="http://www.w3.org/2000/svg">
 						<rect width="512" height="512" fill="#0077b5" fill-opacity=".99515" style="paint-order:normal"/>
 						<g transform="matrix(.72 0 0 .72 71.68 71.68)" fill="#fff">
@@ -238,7 +238,7 @@
 							<circle cx="56" cy="53.222" r="64.372" stroke-width="1.1495"/>
 						</g>
 					</svg>
-				</a>
+				</div>
 			</object>
 		</div>
 		<!--Copy Link Icon-->
@@ -286,56 +286,62 @@
 
 
 
-// Function for Sharebox's preferences customization;
+// Function for Sharerbox's preferences customization;
 
 	function sharerbox(position = 'right', color = 'black', visibility = 'no', message= ''){
 
 
 
-		// Custom default message or description for social-media publications
+		// Custom default description for social-media publications
 		var customMessage = encodeURIComponent(message);
-
-
-		/* Unfortunately, Facebook's non-SDK sharer API does not support URLs that includes hyphens or underscores for the moment,
-		 * this function handles the issue by sharing the user's main website instead */
-		var fbShareURL = function(){
-			if(RegExp(/[\-_]+/gi).test(currentUrl) === true){
-				return document.domain;
-			}else{
-				return currentUrl;
-			}
-		};
 
 		// Setting URLs for social-media sharing links
 
 			// Facebook sharer hyperlink
-			fbLink.href = `https://www.facebook.com/sharer/sharer.php?u=${fbShareURL()}`;
+			facebookURL = `https://www.facebook.com/sharer/sharer.php?u=${currentUrl}`;
 
 			// Twitter sharer hyperlink
-			twLink.href = `https://twitter.com/intent/tweet?text=${customMessage}&url=${currentUrl}`;
+			tweetURL = `https://twitter.com/intent/tweet?text=${customMessage}&url=${currentUrl}`;
 
 			// Whatsapp sharer hyperlink
-
-				/* Alternate link -> https://wa.me/?text=${customMessage}%20${currentUrl}
-				 * (It only works with phone numbers for the moment) */
-			wsLink.href = `whatsapp://send?text=${customMessage}%20${currentUrl}`;
+			whatsappURL = `whatsapp://send?text=${customMessage}%20${currentUrl}`;
 
 			// Reddit sharer hyperlink
-			redditLink.href = `https://www.reddit.com/submit/?url=${currentUrl}`;
+			redditURL = `https://www.reddit.com/submit/?url=${currentUrl}`;
 
 			// LinkedIn sharer hyperlink
-			linkedinLink.href = `https://www.linkedin.com/sharing/share-offsite/?url=${currentUrl}`;
+			linkedinURL = `https://www.linkedin.com/sharing/share-offsite/?url=${currentUrl}`;
 
-			// Copying URL on clipboard by clicking on the copy link icon
-			function copyURL(){
-				navigator.clipboard.writeText(document.URL);
 
-				// Styling effects
-				copyLink.style.background = '#2DB82D';
-				setTimeout(function(){copyLink.removeAttribute('style');}, 2000)
-			}
 
-			copyLink.addEventListener('click', copyURL);
+		// Pop-up window opener function
+		function openWindow(url){
+			window.open(url, 'blank', `width=${window.outerWidth / 2}px, height=${window.outerHeight / 2}px`);
+		}
+
+		// event listeners for Pop-up window opener
+
+			fbLink.onclick = function(){openWindow(facebookURL)}; // Facebook
+
+			twLink.onclick = function(){openWindow(tweetURL)}; // Twitter
+
+			wsLink.onclick = function(){openWindow(whatsappURL)}; // Whatsapp
+
+			redditLink.onclick = function(){openWindow(redditURL)}; // Reddit
+
+			linkedinLink.onclick = function(){openWindow(linkedinURL)}; // LinkedIn
+
+		// Function for opying URL on clipboard by clicking on the copy link icon
+		function copyURL(){
+			navigator.clipboard.writeText(document.URL);
+
+			// Styling effects
+			copyLink.style.background = '#2DB82D';
+			copyLink.style.filter = 'none';
+			setTimeout(function(){copyLink.removeAttribute('style');}, 2000)
+		}
+
+		copyLink.addEventListener('click', copyURL);
 
 		// Sets the share icon color
 		if(color){
