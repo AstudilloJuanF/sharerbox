@@ -1,22 +1,24 @@
 /*
-					        	    Sharerbox
+					  Sharerbox
 
-					  Version: 0.0.1; Author: Juan Astudillo
+			    Version: 0.0.1; Author: Juan Astudillo
 
-	* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
-    * 																	        *
-	* 	   	   +-----------------------------------------------------+			*																	*
-	*		   |			 Copyright © 2020 Juan Astudillo		 |			*
-	*          |											         |			*
-	* 		   |			<astudillojuanfrancisco@gmail.com> 		 |			*
-	*		   +-----------------------------------------------------+			*
-	* 																			*
-	* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+	* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+	*										*
+	*		+-----------------------------------------------+		*																	*
+	*		|	 Copyright © 2020 Juan Astudillo	|		*
+	*		|						|		*
+	*		|	<astudillojuanfrancisco@gmail.com>	|		*
+	*		+-----------------------------------------------+		*
+	*										*
+	* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 
 
 */
 
-									/* Script */
+
+
+					  /* Script */
 
 
 // Inserting HTML markup and CSS Styles into the document
@@ -400,9 +402,3 @@
 	}
 
 	shareIcon.addEventListener('click', flipIcon);
-
-
-// Promise
-	var sharerboxLoad = new Promise(function(resolve, reject){
-		resolve('successful promise resolution');
-	});
