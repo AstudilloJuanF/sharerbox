@@ -2,7 +2,7 @@
 
 Free minimalist and lightweight JavaScript-based social-media sharer for websites.
 
-<img height="250" src="https://pbs.twimg.com/media/EZpSKM3XgAEjWtD.jpg">
+<p align="center"><img height="250" src="https://pbs.twimg.com/media/EZpSKM3XgAEjWtD.jpg"></p>
 
 ## Description
 
@@ -44,7 +44,7 @@ Sharerbox 0.0.1 supports four customization options:
 * **Visibility:** `'visible'`, `'yes'` or `true` to enable default visibility _(hidden by default)_
 * **Description:** Sharerbox lets you choose an optional message or site description for social-media
 
-### Customizing options
+### Customization
 
 To customize Sharerbox you only need to pass these options into `sharerbox()` function as strings separated by commas
 
