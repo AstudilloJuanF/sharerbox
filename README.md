@@ -2,7 +2,7 @@
 
 Free minimalist and lightweight JavaScript-based social-media sharer for websites.
 
-<p align="center"><img height="250" src="https://pbs.twimg.com/media/EZ5srCAWoAUOwnR.jpg"></p>
+<p align="center"><img height="250" src="https://pbs.twimg.com/media/EZpSKM3XgAEjWtD.jpg"></p>
 
 ## Description
 
