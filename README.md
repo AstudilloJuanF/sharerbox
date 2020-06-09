@@ -44,7 +44,7 @@ Sharerbox 0.0.5 supports four customization options:
 
 ### Buttons
 
-* **buttons:** a list of social media sites separated by spaces or commas: `'site1, site2, site3'`
+* **buttons:** a quoted list of social-networks separated commas: `'site1, site2, site3'`
 
 ### Behavior Settings
 
