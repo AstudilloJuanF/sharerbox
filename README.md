@@ -20,9 +20,9 @@ Sharerbox 0.0.6 includes support for Facebook, Twitter, Whatsapp, Reddit, Linked
 
 Sharerbox 0.0.6 supports four customization options:
 
-### Buttons
+### Icons
 
-* **list** a list of social media sites separated by spaces or commas: `'site1, site2, site3'`
+* **List:** a list with social-network names separated by spaces or commas: `'site1, site2, site3'`
 
 ### Behavior Settings
 
