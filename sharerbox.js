@@ -1,12 +1,12 @@
 /*
 							  Sharerbox
 
-			    Version: 0.0.5; Author: Juan Astudillo
+			    Version: 0.0.6; Author: Juan Astudillo
 
 	* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 	*																*
 	*		+-----------------------------------------------+		*
-	*		|	 	 Copyright © 2020 Juan Astudillo		|		*
+	*		|		 Copyright © 2020 Juan Astudillo		|		*
 	*		|												|		*
 	*		|		<astudillojuanfrancisco@gmail.com>		|		*
 	*		+-----------------------------------------------+		*
@@ -23,7 +23,9 @@
 
 // Inserting HTML markup and CSS Styles into the document
 
-	function sharerboxButtons(socialNetworksList = 'facebook, twitter, whatsapp, reddit'){
+	function sharerboxIcons(socialNetworksList = 'facebook, twitter, whatsapp, reddit'){
+
+		// variables for HTML social icons
 
 		var facebookHTML = `<!--Facebook-->
 		<object class="sharerbox-icon-fig" id="fb-fig">
@@ -107,35 +109,65 @@
 			</a>
 		</object>`;
 
-		var socialmedia = ['facebook', 'twitter', 'whatsapp', 'reddit', 'linkedin'];
+	var pinterestHTML = `<!--Pinterest-->
+		<object class="sharerbox-icon-fig" id="pinterest-fig">
+			<a class="sharerbox-socialmedia-link" id="pinterest-link" target="_blank">
+				<svg class="sharerbox-icon" id="pinterest-icon" width="75" height="75" version="1.1" viewBox="0 0 75 75" xmlns="http://www.w3.org/2000/svg">
+					<g transform="matrix(2.0833,0,0,2.0833,6e-4,6e-4)" fill="none" fill-rule="evenodd">
+						<g id="Footer---12-Col" transform="translate(-1330,-635)">
+							<g transform="translate(0,593)">
+								<g id="Social-links" transform="translate(1175,41)">
+									<g transform="translate(155,1)">
+										<rect width="36" height="36" rx="4" fill="#cd1d20"/>
+										<path id="Icon/Social/Pinterest" d="m18.315 7.2941c2.3789 0 4.3392.74155 5.8811 2.2247s2.3128 3.2085 2.3128 5.1762c0 2.5844-.65344 4.7136-1.9604 6.3877-1.3069 1.674-2.9882 2.511-5.0441 2.511-.67548 0-1.3142-.15418-1.9163-.46256-.60206-.30837-1.0206-.6975-1.2555-1.1674-.49927 1.9971-.79295 3.1865-.88106 3.5683-.32306 1.1454-1.1013 2.5551-2.3348 4.2291-.05874.05874-.12482.08076-.19824.06608s-.11013-.05139-.11013-.11013c-.23495-2.2027-.22027-3.8473.04405-4.9339l1.674-7.0485c-.29369-.558-.44053-1.2482-.44053-2.0705 0-.9398.24229-1.7327.72687-2.3789s1.0793-.96916 1.7841-.96916c.55801 0 .98385.18355 1.2775.55066s.44053.82966.44053 1.3877c0 .35242-.05874.77826-.17621 1.2775-.11748.49927-.279 1.0793-.48458 1.7401s-.35242 1.1968-.44053 1.6079c-.17621.67548-.0514 1.2555.37445 1.7401.42585.48458.9765.72687 1.652.72687 1.2041 0 2.188-.66813 2.9515-2.0044.76359-1.3363 1.1454-2.9589 1.1454-4.8678 0-1.4684-.47724-2.6652-1.4317-3.5903-.95448-.92511-2.2687-1.3877-3.9427-1.3877-1.909 0-3.4508.60939-4.6256 1.8282s-1.7621 2.6799-1.7621 4.3833c0 1.0279.279 1.8796.837 2.5551.20558.20558.279.44053.22026.70485l-.26432 1.0132c-.08811.35242-.30837.4699-.66079.35242-.58737-.23495-1.0793-.6094-1.4758-1.1233-.39648-.51395-.69016-1.094-.88106-1.7401s-.28634-1.3363-.28634-2.0705c0-.96917.19824-1.9163.59471-2.8414.39648-.92512.96182-1.7841 1.696-2.5771.73422-.79296 1.7107-1.4391 2.9295-1.9383s2.5624-.7489 4.0308-.7489z" fill="#fff"/>
+									</g>
+								</g>
+							</g>
+						</g>
+					</g>
+				</svg>
+			</a>
+		</object>`;
 
-		var socialNetworks = socialNetworksList.split(',');
+		// Transform sharerboxIcons() arguments into array items
+		var socialNetworks = socialNetworksList.toLowerCase().split(RegExp(/, | |,/));
 
-		var HTMLSocialmediaIcons = ` `;
+		// variable for icon storage;
+		var socialHTMLIcons = ``;
 
+		// Parse and check array items
 		for(i = 0; i < socialNetworks.length; i++){
 
 			socialNetworkName = socialNetworks[i].trim();
 
 			switch(socialNetworkName){
 				case 'facebook':
-					HTMLSocialmediaIcons = HTMLSocialmediaIcons.concat(`${facebookHTML}\n`);
+					socialHTMLIcons = socialHTMLIcons.concat(`${facebookHTML}\n`);
 				break;
+
 				case 'twitter':
-					HTMLSocialmediaIcons = HTMLSocialmediaIcons.concat(`${twitterHTML}\n`);
+					socialHTMLIcons = socialHTMLIcons.concat(`${twitterHTML}\n`);
 				break;
+
 				case 'whatsapp':
-					HTMLSocialmediaIcons = HTMLSocialmediaIcons.concat(`${whatsappHTML}\n`);
+					socialHTMLIcons = socialHTMLIcons.concat(`${whatsappHTML}\n`);
 				break;
+
 				case 'reddit':
-					HTMLSocialmediaIcons = HTMLSocialmediaIcons.concat(`${redditHTML}\n`);
+					socialHTMLIcons = socialHTMLIcons.concat(`${redditHTML}\n`);
 				break;
+
 				case 'linkedin':
-					HTMLSocialmediaIcons = HTMLSocialmediaIcons.concat(`${linkedinHTML}\n`);
+					socialHTMLIcons = socialHTMLIcons.concat(`${linkedinHTML}\n`);
+				break;
+
+				case 'pinterest':
+					socialHTMLIcons = socialHTMLIcons.concat(`${pinterestHTML}\n`);
 				break;
 			}
 		}
 
+		// sharerbox's HTML markup
 		var content = `<style type="text/css">
 	#sharerbox-section{
 		box-sizing: border-box;
@@ -145,8 +177,8 @@
 		flex-wrap: wrap;
 		align-items: center;
 		position: fixed;
-		top: 33.33%;
-		bottom: 33.33%;
+		top: 0;
+		bottom: 0;
 		left: 0;
 		right: unset;
 		margin: 0;
@@ -226,6 +258,11 @@
 		background: #0077b5;
 	}
 
+	#pinterest-icon{
+		background: #cd1d20;
+	}
+
+
 	#copy-link-fig{
 		margin: 5px 2.5px 0 2.5px;
 		position: relative;
@@ -264,7 +301,7 @@
 
 	#sharerbox-share-icon-fig{
 		display: block;
-		margin-left: 4px;
+		margin: auto 4px;
 	}
 
 	#sharerbox-share-icon-wrap{
@@ -274,7 +311,7 @@
 <section id="sharerbox-section">
 	<div id="sharerbox-copy-url-wrap">
 		<div id="sharerbox-social-icons-box">
-			${HTMLSocialmediaIcons}
+			${socialHTMLIcons}
 		</div>
 		<!--Copy Link Icon-->
 		<object class="sharerbox-icon-fig" id="copy-link-fig">
@@ -297,19 +334,13 @@
 
 		document.body.insertAdjacentHTML('beforeend', content);
 
-		return true;
-
 	}
-
-
-
-
 
 
 
 // Function for Sharerbox's preferences customization;
 
-	function sharerSetup(behavior = 'popup', position = 'right', color = 'black', visibility = 'hidden', shareMessage = ''){
+	function sharerSetup(behavior = 'popup', position = 'right', color = 'black', visibility = 'hidden', shareDescription = ''){
 
 		// icon variables;
 
@@ -326,6 +357,7 @@
 		var wsLink = document.getElementById('ws-link');
 		var redditLink = document.getElementById('reddit-link');
 		var linkedinLink = document.getElementById('linkedin-link');
+		var pinterestLink = document.getElementById('pinterest-link');
 
 		var copyLink = document.getElementById('copy-link-icon');
 
@@ -338,21 +370,21 @@
 		visibility = visibility.toLowerCase();
 
 		// (Unnecessary) gives a little format to the site description
-		shareMessage = shareMessage.charAt(0).toUpperCase() + shareMessage.slice(1);
-		shareMessage = shareMessage.trim();
+		shareDescription = shareDescription.charAt(0).toUpperCase() + shareDescription.slice(1);
+		shareDescription = shareDescription.trim();
 
-		shareMessage = (function(){
-			if(!(shareMessage.match(/:$/))){
-				shareMessage = shareMessage.concat(':');
+		shareDescription = (function(){
+			if(!(shareDescription.match(/:$/))){
+				shareDescription = shareDescription.concat(':');
 			}
 
-			return shareMessage;
+			return shareDescription;
 		})();
 
 		// Custom default description for social-media publications
-		var customDescription = encodeURIComponent(shareMessage);
+		var customDescription = encodeURIComponent(shareDescription);
 
-		// Setting URLs for social-media sharing links
+		// Setting URLs for supported social-media sharing links
 
 			// Facebook sharer hyperlink
 			facebookURL = `https://www.facebook.com/sharer/sharer.php?u=${currentUrl}`;
@@ -369,9 +401,12 @@
 			// LinkedIn sharer hyperlink
 			linkedinURL = `https://www.linkedin.com/sharing/share-offsite/?url=${currentUrl}`;
 
+			// Pinterest sharer hyperlink
+			pinterestURL = `https://www.pinterest.com/pin/create/button/?url=${currentUrl}&description=${customDescription}`;
+
 			// Pop-up window opener function
 			function openWindow(url){
-				window.open(url, 'blank', `width=${window.outerWidth / 2}px, height=${window.outerHeight / 2}px`);
+				window.open(url, '_blank', `width=${screen.width / 2}px, height=${screen.height / 2}px`);
 			}
 
 		if(behavior === 'popup' || behavior === 'pop-up' || behavior === 'window' || behavior === ''){
@@ -398,6 +433,10 @@
 				linkedinLink.onclick = function(){openWindow(linkedinURL)}; // LinkedIn
 			}
 
+			if(pinterestLink){
+				pinterestLink.onclick = function(){openWindow(pinterestURL)}; // Pinterest
+			}
+
 		}else if(behavior === 'tab' || behavior === 'new-tab' || behavior === 'new tab'){
 
 			// href attributes for new tabs
@@ -420,6 +459,10 @@
 
 			if(linkedinLink){
 				linkedinLink.href = linkedinURL; // LinkedIn
+			}
+
+			if(pinterestLink){
+				pinterestLink.href = pinterestURL; // Pinterest
 			}
 
 		}

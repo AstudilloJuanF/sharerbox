@@ -6,18 +6,75 @@ Free minimalist and lightweight JavaScript-based social-media sharer for website
 
 ## Description
 
-Sharerbox is a minimalistic social-media sharebar developed to provide simple social-media integration for websites without negatively affecting sites loading speeds calling for heavy or bulky external API requests
+Version: 0.0.6
 
-Version: 0.0.5
+Sharerbox is a minimalistic and lightweight social-media sharebar developed to provide fast and easy-to-use social-media integration for websites without negatively affecting websites loading speed by calling for heavy or bulky external APIs
+
+Sharerbox use is intended for both experienced and unexperienced users
 
 ### Support
 
-Sharerbox supports Facebook, Twitter, Whatsapp, Reddit and LinkedIn by default
+Currently Sharerbox 0.0.6 includes support for Facebook, Twitter, Whatsapp, Reddit, LinkedIn and Pinterest
+
+## Options:
+
+Sharerbox 0.0.6 supports four customization options:
+
+### Buttons
+
+* **list** a list of social media sites separated by spaces or commas: `'site1, site2, site3'`
+
+### Behavior Settings
+
+* **Behavior:** `'pop-up'` _(default)_ or `'new tab'` sets how the sharer menus will be deployed
+* **Position:** `'left'` or `'right'` _(default)_ sets the position of the sharebar in the screen
+* **Color:** `'color name'` _(Black by default)._ selects a color for the toggle button
+* **Visibility:** `'visible'`, `'yes'` or `true` enables the icon bar default visibility _(hidden by default)_
+* **Description:** `'quoted text'` creates a predefined message or website description for social-networks
+
+## Customization
+
+### Setting Icons
+
+You can specify which social-network icons will be displayed by Sharerbox by going to the `sharerboxIcons()` function inside the `<body>` tag code snippet and typing a list of supported social-network items separated by spaces or commas, the full list must be wrapped around quotation marks.
+
+Example:
+```javascript
+sharerboxIcons('site1, site2, site3, site...');
+```
+
+if this function is leaved blank sharerbox will display the default buttons
+
+### Setting Behavior
+
+To customize Sharerbox overall behavior enter these options into the `sharerSetup()` function located inside the code snippet pasted on your page's `<body>` tag, each argument must be written as a quoted word (_'word'_), each word separated from each other by commas.
+
+Example:
+```javascript
+sharerSetup('tab', 'right', 'black', 'visible');
+```
+
+if these options are leaved blank sharerbox will display it's default behavior.
+
+Example:
+```html
+<script>
+	window.onload = function(){
+
+		// Buttons list: 'site1, site2, site3'
+		sharerboxIcons('facebook, twitter, whatsapp, reddit');
+
+		// Setup arguments: Behavior, Position, Color, Visibility, Description
+		sharerSetup('pop-up', 'left', 'black', true, 'custom message or description goes here (optional)');
+	};
+</script>
+```
 
 ## Installation:
 
 1. Download and store Sharerbox's **JavaScript File** on your server.
-2. Asynchronously load the script inside your desired webpage's **HTML** `<head>` tag using the `async` attribute.
+
+2. Asynchronously load the script inside your webpage's **HTML** `<head>` tag using the `async` attribute.
 
 	Example:
 	```html
@@ -27,70 +84,17 @@ Sharerbox supports Facebook, Twitter, Whatsapp, Reddit and LinkedIn by default
 3. Copy this code snippet anywhere inside or after your **HTML** page's `<body>` tag.
 
 	Example:
-	```html
-	<script>
-		window.onload = function(){
-			sharerboxButtons( /* list your preferred social-networks here, else options are set to default */ );
-			sharerSetup( /* Behavior options go here, else options are set to default */ );
-		};
-	</script>
-	```
-4. Save Changes
-* All done, sharerbox is now enabled for your site.
-
-## Options:
-
-Sharerbox 0.0.5 supports four customization options:
-
-### Buttons
-
-* **buttons:** a quoted list of social-networks separated commas: `'site1, site2, site3'`
-
-### Behavior Settings
-
-* **Behavior:** `'pop-up'` _(default)_ or `'new tab'`
-* **Position:** `'left'` or `'right'` _(default)_
-* **Color:** `'color name'` _(Black by default)._ selects a color for the main button
-* **Visibility:** `'visible'`, `'yes'` or `true` enables the icon bar default visibility _(hidden by default)_
-* **Description:** `'quoted text'` lets you create a predefined message or website description for social-networks
-
-## Customization
-
-### Customizing Buttons
-
-To customize social-network buttons all you need is to enter a quoted text string with a list of supported social network names into the `sharerboxButtons()` function inside the `<body>` tag code snippet.
-
-Example:
-```javascript
-sharerboxButtons('site1, site2, site3');
-```
-
-if these options are leaved blank sharerbox will display the default buttons.
-
-### Customizing Behavior
-
-To customize Sharerbox behaviour all you need to do is to enter these options into the `sharerSetup()` function inside the `<body>` tag code snippet, each argument written as a quoted word (_'quoted'_), separated from each other by commas.
-
-Example:
-```javascript
-sharerSetup('tab', 'right', 'black', 'visible');
-```
-
-if these options are leaved blank sharerbox will execute with it's default behavior.
-
-Example:
 ```html
 <script>
 	window.onload = function(){
-
-		// Buttons list = 'site1, site2, site3'
-		sharerboxButtons('facebook, twitter, whatsapp, reddit');
-
-		// Setup arguments = Behavior, Position, Color, Visibility, Description
-		sharerSetup('pop-up', 'left', 'black', true, 'custom message or description goes here (optional)');
+		sharerboxIcons( /* list your preferred social-networks here, else options are set to default */ );
+		sharerSetup( /* Behavior options go here, else options are set to default */ );
 	};
 </script>
 ```
+4. Save Changes
+
+* All done, sharerbox is now enabled for your site.
 
 
 |Author        |
