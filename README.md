@@ -14,7 +14,7 @@ Sharerbox use is intended for both experienced and unexperienced users
 
 ### Support
 
-Currently Sharerbox 0.0.6 includes support for Facebook, Twitter, Whatsapp, Reddit, LinkedIn and Pinterest
+Sharerbox 0.0.6 includes support for Facebook, Twitter, Whatsapp, Reddit, LinkedIn and Pinterest
 
 ## Options:
 
