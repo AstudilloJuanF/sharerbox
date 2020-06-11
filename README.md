@@ -6,7 +6,7 @@ Free minimalist and lightweight JavaScript-based social-media sharer for website
 
 ## Description
 
-Version: 0.0.6
+Version: 0.0.7
 
 Sharerbox is a minimalistic and lightweight social-media sharebar developed to provide fast and easy-to-use social-media integration for websites without negatively affecting websites loading speed by calling for heavy or bulky external APIs
 
@@ -14,11 +14,11 @@ Sharerbox use is intended for both experienced and unexperienced users
 
 ### Support
 
-Sharerbox 0.0.6 includes support for Facebook, Twitter, Whatsapp, Reddit, LinkedIn and Pinterest
+Sharerbox 0.0.7 includes support for Facebook, Twitter, Whatsapp, Reddit, LinkedIn and Pinterest
 
 ## Options:
 
-Sharerbox 0.0.6 supports four customization options:
+Sharerbox 0.0.7 supports four customization options:
 
 ### Icons
 
