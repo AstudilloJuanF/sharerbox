@@ -1,12 +1,12 @@
 /*
 							  Sharerbox
 
-			    Version: 0.0.6; Author: Juan Astudillo
+			    Version: 0.0.7; Author: Juan Astudillo
 
 	* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 	*																*
 	*		+-----------------------------------------------+		*
-	*		|		 Copyright © 2020 Juan Astudillo		|		*
+	*		|	 	 Copyright © 2020 Juan Astudillo		|		*
 	*		|												|		*
 	*		|		<astudillojuanfrancisco@gmail.com>		|		*
 	*		+-----------------------------------------------+		*
@@ -212,7 +212,7 @@
 		display: block;
 		margin: 0;
 		padding: 0;
-		height: 45px
+		height: 45px;
 	}
 
 	.sharerbox-icon-fig{
@@ -263,29 +263,40 @@
 	}
 
 
-	#copy-link-fig{
+	.extra-buttons-fig{
 		margin: 5px 2.5px 0 2.5px;
 		position: relative;
 	}
 
-	#copy-link-icon{
-		background: darkgray;
+	.extra-buttons{
 		width: 40px;
 		height: 40px;
 		border-radius: 100%;
 		filter: brightness(90%);
-		box-shadow: 0 0 2.5px rgb(0,0,0, 0.9);
+		box-shadow: 0 0 3px rgb(0,0,0, 0.9);
 		transition: 0.15s linear;
 
 	}
 
-	#copy-link-icon:hover{
-		transform: scale(1.05);
-		filter: brightness(95%);
+	#send-email-button{
+		background: silver;
 	}
 
-	#copy-link-fig:hover #copy-link-status{
-		display: inline;
+	#send-email-button:hover{
+		background: goldenrod;
+	}
+
+	#send-email-button:active{
+		background: mediumseagreen;
+	}
+
+	#copy-link-icon{
+		background: darkcyan;
+	}
+
+	.extra-buttons:hover{
+		transform: scale(1.05);
+		filter: brightness(95%);
 	}
 
 	#sharerbox-share-icon{
@@ -313,11 +324,19 @@
 		<div id="sharerbox-social-icons-box">
 			${socialHTMLIcons}
 		</div>
-		<!--Copy Link Icon-->
-		<object class="sharerbox-icon-fig" id="copy-link-fig">
-			<svg class="sharerbox-icon" id="copy-link-icon" width="1306.7" height="1306.7" version="1.1" viewBox="0 0 1306.7 1306.7" xmlns="http://www.w3.org/2000/svg">
+		<!--Send Email Button-->
+		<object class="extra-buttons-fig" id="send-email-button-fig">
+			<a  class="sharerbox-socialmedia-link" id="send-email-link">
+				<svg class="extra-buttons" id="send-email-button" enable-background="new 0 0 493.497 493.497" version="1.1" viewBox="0 0 493.5 493.5" xml:space="preserve" xmlns="http://www.w3.org/2000/svg">
+					<path d="m389.17 130.44h-284.84c-19.431 0-35.239 15.806-35.239 35.239v162.13c0 19.431 15.807 35.239 35.239 35.239h284.84c19.431 0 35.238-15.807 35.238-35.239v-162.13c.00072-19.432-15.806-35.239-35.237-35.239zm11.746 35.239v162.13c0 1.8533-.522 3.5453-1.291 5.1048l-83.043-83.049 84.31-84.31c0 .0468.0238.0806.0238.12672zm-308.33 162.13v-162.13c0-.0461.02376-.0792.02376-.126l84.31 84.31-83.048 83.048c-.7632-1.5595-1.2852-3.2508-1.2852-5.1048zm157.79-44.952c-1.9382 1.9375-5.3122 1.9375-7.2504 0l-128.92-128.92h265.09zm-56.849-16.38 32.989 32.99c5.4086 5.4079 12.595 8.3844 20.235 8.3844 7.6392 0 14.827-2.9765 20.235-8.3844l32.99-32.99 73.073 73.079h-252.6z" stroke-width=".72" fill="white"/>
+				</svg>
+			</a>
+		</object>
+		<!--Copy URL Button-->
+		<object class="extra-buttons-fig" id="copy-link-fig">
+			<svg class="extra-buttons" id="copy-link-icon" width="1306.7" height="1306.7" version="1.1" viewBox="0 0 1306.7 1306.7" xmlns="http://www.w3.org/2000/svg">
 				<g transform="matrix(.72 0 0 .72 182.91 182.95)" stroke-width="1.3333">
-					<path d="m276 1305.2c-156.85-5.6678-289.14-155.44-274.46-312.05 3.0514-90.655 57.039-169.42 123.81-226.86 96.762-95.642 190.78-194.45 290.73-286.63 123.19-93.928 316.73-65.832 407.54 59.82 41.534 67.722-62.931 142.52-112.95 80.086-56.083-68.731-171.62-77.594-231.33-9.1253-104.44 103.13-208.85 206.37-310.44 312.3-62.244 81.217-16.29 213.22 83.363 237.62 77.05 26.164 146.49-26.017 193.42-81.698 45.169-44.962 90.243-90.019 135.37-135.03 59.362 28.479 130.65 30.581 191.4 5.0055-100.82 101.14-199.87 204.6-304.94 301.19-55.18 39.774-123.57 60.014-191.51 55.385zm422.67-422.67c-86.799-5.91-177.1-51.029-220.76-127.79-25.856-87.032 99.372-121.7 139.13-48.704 63.476 59.077 171.95 45.731 223.35-22.706 100.71-101.23 204.73-199.5 301-304.94 60.094-84.325 5.6901-214.88-95.131-234.33-64.946-16.126-128.95 18.019-169.05 67.931-50.726 50.146-101.09 100.65-151.63 150.99-59.78-28.583-131.99-30.665-192.91-4.3285 102.81-100.99 201.45-206.65 308.36-303.13 125.11-94.05 321.1-62.214 409.45 67.215 86.1 114.5 69.423 291.05-38.105 386.17-106.09 105.91-210.44 213.88-319.65 316.47-55.652 40.883-125.04 61.84-194.05 57.154z" style="fill:#F7F7F7;"/>
+					<path d="m276 1305.2c-156.85-5.6678-289.14-155.44-274.46-312.05 3.0514-90.655 57.039-169.42 123.81-226.86 96.762-95.642 190.78-194.45 290.73-286.63 123.19-93.928 316.73-65.832 407.54 59.82 41.534 67.722-62.931 142.52-112.95 80.086-56.083-68.731-171.62-77.594-231.33-9.1253-104.44 103.13-208.85 206.37-310.44 312.3-62.244 81.217-16.29 213.22 83.363 237.62 77.05 26.164 146.49-26.017 193.42-81.698 45.169-44.962 90.243-90.019 135.37-135.03 59.362 28.479 130.65 30.581 191.4 5.0055-100.82 101.14-199.87 204.6-304.94 301.19-55.18 39.774-123.57 60.014-191.51 55.385zm422.67-422.67c-86.799-5.91-177.1-51.029-220.76-127.79-25.856-87.032 99.372-121.7 139.13-48.704 63.476 59.077 171.95 45.731 223.35-22.706 100.71-101.23 204.73-199.5 301-304.94 60.094-84.325 5.6901-214.88-95.131-234.33-64.946-16.126-128.95 18.019-169.05 67.931-50.726 50.146-101.09 100.65-151.63 150.99-59.78-28.583-131.99-30.665-192.91-4.3285 102.81-100.99 201.45-206.65 308.36-303.13 125.11-94.05 321.1-62.214 409.45 67.215 86.1 114.5 69.423 291.05-38.105 386.17-106.09 105.91-210.44 213.88-319.65 316.47-55.652 40.883-125.04 61.84-194.05 57.154z" fill="white"/>
 				</g>
 			</svg>
 		</object>
@@ -358,6 +377,8 @@
 		var redditLink = document.getElementById('reddit-link');
 		var linkedinLink = document.getElementById('linkedin-link');
 		var pinterestLink = document.getElementById('pinterest-link');
+
+		var emailButtonLink = document.getElementById('send-email-link');
 
 		var copyLink = document.getElementById('copy-link-icon');
 
@@ -403,6 +424,9 @@
 
 			// Pinterest sharer hyperlink
 			pinterestURL = `https://www.pinterest.com/pin/create/button/?url=${currentUrl}&description=${customDescription}`;
+
+			//Email
+			sendEmailURL = `mailto:?subject=${customDescription}&body=${currentUrl}`;
 
 			// Pop-up window opener function
 			function openWindow(url){
@@ -467,14 +491,22 @@
 
 		}
 
+		if(emailButtonLink){
+			emailButtonLink.href = sendEmailURL; // Email
+		}
+
 		// Function for copying URL on clipboard by clicking on the copy link icon
 		function copyURL(){
 			navigator.clipboard.writeText(document.URL);
 
 			// Styling effects
-			copyLink.style.background = '#2DB82D';
+			copyLink.style.background = 'radial-gradient(#A1FFA1, #06f906)';
+			copyLink.firstElementChild.firstElementChild.style.fill = 'darkcyan';
 			copyLink.style.filter = 'none';
-			setTimeout(function(){copyLink.removeAttribute('style');}, 2000)
+			setTimeout(function(){
+				copyLink.removeAttribute('style');
+				copyLink.firstElementChild.firstElementChild.removeAttribute('style');
+			}, 2000)
 		}
 
 		copyLink.addEventListener('click', copyURL);
