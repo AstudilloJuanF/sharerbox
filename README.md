@@ -25,6 +25,32 @@ Free minimalist and lightweight JavaScript-based social-media sharer for website
 	<img width="50px" height="50px" src="https://astudillojuanf.github.io/sharerbox/icons/tumblr-icon-soft-square.svg">
 </p>
 
+## Installation:
+
+1. Download and store Sharerbox's **JavaScript File** on your server.
+
+2. Asynchronously load the script inside your webpage's **HTML** `<head>` tag using the `async` attribute.
+
+	Example:
+	```html
+	<script type="application/javascript" src="path/to/sharerbox.js" async></script>
+	```
+
+3. Copy this code snippet anywhere inside or after your **HTML** page's `<body>` tag.
+
+	Example:
+```html
+<script>
+	window.onload = function(){
+		sharerboxIcons( /* list your preferred social-networks here, else options are set to default */ );
+		sharerSetup( /* Behavior options go here, else options are set to default */ );
+	};
+</script>
+```
+4. Save Changes and reload your site.
+
+* All done, sharerbox will be now enabled on your site.
+
 ## Options:
 
 Sharerbox 0.0.7b supports four customization options:
@@ -79,31 +105,7 @@ Example:
 </script>
 ```
 
-## Installation:
 
-1. Download and store Sharerbox's **JavaScript File** on your server.
-
-2. Asynchronously load the script inside your webpage's **HTML** `<head>` tag using the `async` attribute.
-
-	Example:
-	```html
-	<script type="application/javascript" src="path/to/sharerbox.js" async></script>
-	```
-
-3. Copy this code snippet anywhere inside or after your **HTML** page's `<body>` tag.
-
-	Example:
-```html
-<script>
-	window.onload = function(){
-		sharerboxIcons( /* list your preferred social-networks here, else options are set to default */ );
-		sharerSetup( /* Behavior options go here, else options are set to default */ );
-	};
-</script>
-```
-4. Save Changes and reload your site.
-
-* All done, sharerbox will be now enabled on your site.
 
 ## Author
 
