@@ -57,7 +57,7 @@ Sharerbox 0.0.7b supports four customization options:
 
 ### Icons
 
-**Social-Networks:** `'site1, site2, site3'` A string list of social-network names separated by spaces of commas.
+* **Social-Networks:** `'site1, site2, site3'` A string list of social-network names separated by spaces of commas.
 
 ### Setting Icons
 
@@ -75,7 +75,7 @@ _(if this function is leaved blank sharerbox will display it's default buttons)_
 * **Behavior:** `'pop-up'` _(default)_ or `'new tab'`; Sets how the sharer menus will be deployed.
 * **Position:** `'left'` or `'right'` _(default)_; Sets the position of the sharebar in the screen.
 * **Color:** `'color name'` _(Black by default)._; Selects a color for the toggle button.
-* **Visibility:** `'visible'`, `'yes'` or `true`; Enables the icon bar default visibility _(hidden by default)_.
+* **Visibility:** `'visible'`, `'yes'` or `true`; Enables the icon bar default visibility _(`hidden` by default)_.
 * **Description:** `'quoted text'`; Creates a predefined message or website description for social-networks.
 
 ### Setting Behavior
