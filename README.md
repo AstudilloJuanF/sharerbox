@@ -59,7 +59,7 @@ Sharerbox 0.0.7b supports four customization options:
 
 **Social-Networks:** `'site1, site2, site3'` A string list of social-network names separated by spaces of commas.
 
-#### Setting Icons
+### Setting Icons
 
 You can specify which social-network icons will be displayed by going to the `sharerboxIcons()` function inside the code snippet pasted within  your `<body>` tag and typing a string list of supported social-network items separated by spaces or commas, the full list must be wrapped around quotation marks.
 
@@ -89,7 +89,9 @@ sharerSetup('tab', 'right', 'black', 'visible');
 
 _(if these options are leaved blank sharerbox will display it's default behavior)_.
 
-Example:
+## Example
+
+Full Example:
 ```html
 <script>
 	window.onload = function(){
