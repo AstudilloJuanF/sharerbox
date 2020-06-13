@@ -105,7 +105,6 @@ Example:
 
 * All done, sharerbox will be now enabled on your site.
 
+## Author
 
-|Author        |
-|--------------|
-|Juan Astudillo|
+Juan Astudillo
