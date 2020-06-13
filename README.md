@@ -14,7 +14,7 @@ _**Version:** 0.0.7b_
 
   SharerBox is currently a personal project, but it's integration process is intended to be easy for unexperienced users as well as very easy to customize for developers
 
-### Support
+<h3 align="center"><b>Support:</b></h3>
 
 <p align="center">
 	<img width="50px" height="50px" src="https://astudillojuanf.github.io/sharerbox/icons/facebook-logo.svg">
