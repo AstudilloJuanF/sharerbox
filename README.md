@@ -3,10 +3,9 @@
 Free minimalist and lightweight JavaScript-based social-media sharer for websites.
 
 <p align="center"><a href="https://astudillojuanf.github.io/sharerbox/" target="_blank"><img height="250" src="https://astudillojuanf.github.io/sharerbox/images/cover/sharerbox.svg"></a></p>
+<p align="center"><b><i>Version:</b> 0.0.7b</i></p>
 
 ## Description
-
-_**Version:** 0.0.7b_
 
  SharerBox is a free, minimalistic and lightweight JavaScript-Based social-media sharebar feature developed to provide fast and easy-to-use social-media sharing integration for small websites by eliminating the need for loading heavy or bulky third-party social APIs, which usually have a negative impact on loading speeds and unauthorizedly recolect private user information.
 
