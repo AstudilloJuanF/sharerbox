@@ -1,7 +1,7 @@
 /*
 							  Sharerbox
 
-			    Version: 0.0.7a; Author: Juan Astudillo
+			    Version: 0.0.7b; Author: Juan Astudillo
 
 	* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 	*																*
@@ -126,6 +126,20 @@
 			</a>
 		</object>`;
 
+	var tumblrHTML = `<!--Tumblr-->
+		<object class="sharerbox-icon-fig" id="tumblr-fig">
+			<a class="sharerbox-socialmedia-link" id="tumblr-link" target="_blank">
+				<svg class="sharerbox-icon" id="tumblr-icon" viewBox="0 0 72 72" version="1.1">
+					<g transform="translate(-152.000000, -267.000000)">
+						<g transform="translate(152.000000, 267.000000)">
+							<path d="M8,72 L64,72 C68.418278,72 72,68.418278 72,64 L72,8 C72,3.581722 68.418278,-8.11624501e-16 64,0 L8,0 C3.581722,8.11624501e-16 -5.41083001e-16,3.581722 0,8 L0,64 C5.41083001e-16,68.418278 3.581722,72 8,72 Z" id="Rounded" fill="#34455D"/>
+							<path d="M47.7406584,50.3407377 C46.8671091,50.7664252 45.1965085,51.1367974 43.9507666,51.1686638 C40.1897087,51.2714782 39.4597404,48.4693359 39.4294354,46.4380008 L39.4294354,31.4953464 L48.8637092,31.4953464 L48.8637092,24.2273932 L39.4620942,24.2273932 L39.4620942,12 L32.5822681,12 C32.4689921,12 32.271274,12.1013112 32.2433228,12.3583471 C31.8408251,16.1005494 30.127268,22.6686434 23,25.294919 L23,31.4950458 L27.7546504,31.4950458 L27.7546504,47.1778433 C27.7546504,52.5479395 31.6313381,60.1769455 41.8653111,59.99687 C45.318317,59.936444 49.153225,58.4597653 50,57.1848071 L47.7406584,50.3407377" fill="#FFFFFF"/>
+						</g>
+					</g>
+				</svg>
+			</a>
+		</object>`;
+
 		// Transform sharerboxIcons() arguments into array items
 		var socialNetworks = socialNetworksList.toLowerCase().split(RegExp(/, | |,/));
 
@@ -161,6 +175,9 @@
 				case 'pinterest':
 					socialHTMLIcons = socialHTMLIcons.concat(`${pinterestHTML}\n`);
 				break;
+
+				case 'tumblr':
+					socialHTMLIcons = socialHTMLIcons.concat(`${tumblrHTML}\n`);
 			}
 		}
 
@@ -262,6 +279,10 @@
 		background: #cd1d20;
 	}
 
+	#tumblr-fig{
+		background: #34455D;
+	}
+
 	.extra-buttons-fig{
 		margin: 5px 2.5px 0 2.5px;
 		position: relative;
@@ -281,7 +302,7 @@
 		transform: scale(1.07);
 	}
 
-	#send-email-button{
+	#send-email-button, #copy-link-icon{
 		background: white;
 	}
 
@@ -303,10 +324,6 @@
 
 	#send-email-button:hover #sb-email-envelope-bg{
 		fill: #FFFF9E;
-	}
-
-	#copy-link-icon{
-		background: white;
 	}
 
 	#copy-link-icon:first-child{
@@ -397,6 +414,7 @@
 		var redditLink = document.getElementById('reddit-link');
 		var linkedinLink = document.getElementById('linkedin-link');
 		var pinterestLink = document.getElementById('pinterest-link');
+		var tumblrLink = document.getElementById('tumblr-link');
 
 		var emailButtonLink = document.getElementById('send-email-link');
 
@@ -437,6 +455,9 @@
 			// Pinterest sharer hyperlink
 			pinterestURL = `https://www.pinterest.com/pin/create/button/?url=${currentUrl}&description=${customDescription}`;
 
+			// Tumblr sharer hyperlink
+			tumblrURL = `https://www.tumblr.com/widgets/share/tool/preview?shareSource=legacy&canonicalUrl=&url=${currentUrl}&title=${customDescription}`;
+
 			//Email
 			sendEmailURL = `mailto:?subject=${customDescription}&body=${currentUrl}`;
 
@@ -471,6 +492,10 @@
 
 			if(pinterestLink){
 				pinterestLink.onclick = function(){openWindow(pinterestURL)}; // Pinterest
+			}
+
+			if(tumblrLink){
+				tumblrLink.onclick = function(){openWindow(tumblrURL)}; // Tumblr
 			}
 
 		}else if(behavior === 'tab' || behavior === 'new-tab' || behavior === 'new tab'){
