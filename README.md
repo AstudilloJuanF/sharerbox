@@ -8,9 +8,11 @@ Free minimalist and lightweight JavaScript-based social-media sharer for website
 
 _**Version:** 0.0.7b_
 
-Sharerbox is a minimalistic and lightweight social-media sharebar developed to provide fast and easy-to-use social-media integration for websites without negatively affecting websites loading speed by calling for heavy or bulky external APIs
+ SharerBox is a free, minimalistic and lightweight JavaScript-Based social-media sharebar feature developed to provide fast and easy-to-use social-media sharing integration for small websites by eliminating the need for loading heavy or bulky third-party social APIs, which usually have a negative impact on loading speeds and unauthorizedly recolect private user information.
 
-Sharerbox use is intended for both experienced and unexperienced users
+  Integrating SharerBox directly on your website for social-media sharing instead of external APIs should significantly reduce loading speeds for visitors connected from slow networks, which will result on improved SEO indexation and enhanced user experience and device portability, specially for visitors connected from old computers or low-end devices. Plus, since there is no need for integrating obscure third-party code there is also no unauthorized recolection of private user information derived from using SharerBox.
+
+  SharerBox is currently a personal project, but it's integration process is intended to be easy for unexperienced users as well as very easy to customize for developers
 
 ### Support
 
