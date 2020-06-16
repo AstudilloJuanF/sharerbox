@@ -111,5 +111,5 @@ Full Example:
 Juan Astudillo
 
 <p align="center">
-	<a href="https://www.fiverr.com/astudillo_juan">Fiverr</a>|<a href="https://www.linkedin.com/in/juan-astudillo/">LinkedIn</a>
+	<a href="https://www.fiverr.com/astudillo_juan">Fiverr</a> | <a href="https://www.linkedin.com/in/juan-astudillo/">LinkedIn</a>
 </p>
