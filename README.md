@@ -88,7 +88,7 @@ To customize Sharerbox overall behavior enter these options into the `sharerSetu
 
 Example:
 ```javascript
-sharerSetup('tab', 'right', 'black', 'visible');
+sharerSetup('tab', 'right', 'black', 'visible', 'Custom description');
 ```
 
 _(if these options are leaved blank sharerbox will display it's default behavior)_.
