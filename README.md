@@ -106,9 +106,9 @@ Full Example:
 ```
 
 
-## Author
+<h2 align="center">Author<h2>
 
-Juan Astudillo
+<p align="center">Juan Astudillo</p>
 
 <p align="center">
 	<a href="https://www.fiverr.com/astudillo_juan">Fiverr</a> | <a href="https://www.linkedin.com/in/juan-astudillo/">LinkedIn</a>
