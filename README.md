@@ -67,9 +67,7 @@ Example:
 ```javascript
 sharerboxIcons('site1, site2, site3, site...');
 ```
-OR
-
-Example:
+OR:
 ```javascript
 sharerboxIcons('site1 site2 site3 site...');
 ```
