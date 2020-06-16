@@ -67,6 +67,12 @@ Example:
 ```javascript
 sharerboxIcons('site1, site2, site3, site...');
 ```
+OR
+
+Example:
+```javascript
+sharerboxIcons('site1 site2 site3 site...');
+```
 
 _(if this function is leaved blank sharerbox will display it's default buttons)_.
 
