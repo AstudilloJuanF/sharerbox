@@ -106,7 +106,7 @@ Full Example:
 ```
 
 
-<h2 align="center">Author<h2>
+<h2 align="center">Author</h2>
 
 <p align="center">Juan Astudillo</p>
 
