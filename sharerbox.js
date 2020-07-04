@@ -1,7 +1,7 @@
 /*
 							  Sharerbox
 
-			    Version: 0.0.7c; Author: Juan Astudillo
+			    Version: 0.7.0; Author: Juan Astudillo
 
 	* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 	*																*
