@@ -54,8 +54,6 @@ Free minimalist and lightweight JavaScript-based social-media sharer for website
 
 ## Options:
 
-Sharerbox 0.0.7b supports four customization options:
-
 ### Icons
 
 * **Social-Networks:** `'site1, site2, site3'` A string list of social-network names separated by spaces of commas.
