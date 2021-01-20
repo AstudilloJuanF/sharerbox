@@ -1,5 +1,5 @@
 /*
-							  Sharerbox
+					    Sharerbox
 
 			    Version: 0.7.0; Author: Juan Astudillo
 
