@@ -1,7 +1,7 @@
 /*
 					    				Sharerbox
 
-			    		Version: 0.7.0; Author: Juan Astudillo
+			    		Version: 0.7.1; Author: Juan Astudillo
 
 	* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 	*																				*
@@ -193,6 +193,7 @@ function sharerboxIcons(socialNetworksList = 'facebook, twitter, whatsapp, reddi
 	#sharerbox-section{
 		box-sizing: border-box;
 		z-index: 9999;
+		visibility: hidden;
 		display: flex;
 		flex-flow: row wrap;
 		align-items: center;
@@ -210,6 +211,7 @@ function sharerboxIcons(socialNetworksList = 'facebook, twitter, whatsapp, reddi
 	}
 
 	#sharerbox-hidden-icons-wrap{
+		visibility: visible;
 		display: flex;
 		flex-flow: column nowrap;
 		align-items: flex-start;
@@ -337,6 +339,7 @@ function sharerboxIcons(socialNetworksList = 'facebook, twitter, whatsapp, reddi
 	}
 
 	#sharerbox-share-icon-wrap{
+		visibility: visible;
 		transition: 0.25s linear;
 	}
 
