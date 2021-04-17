@@ -3,7 +3,7 @@
 Free minimalist and lightweight JavaScript-based social-media sharer for websites.
 
 <p align="center"><a href="https://astudillojuanf.github.io/sharerbox/" target="_blank"><img height="250" src="https://astudillojuanf.github.io/sharerbox/images/cover/sharerbox.svg"></a></p>
-<p align="center"><b><i>Version:</b> 0.7.0</i></p>
+<p align="center"><i><b>Version:</b> 0.7.1</i></p>
 
 ## Description
 
