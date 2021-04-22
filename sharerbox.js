@@ -1,7 +1,7 @@
 /*
 					    				Sharerbox
 
-			    		Version: 0.7.1; Author: Juan Astudillo
+			    		Version: 0.8.0; Author: Juan Astudillo
 
 	* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 	*																				*
@@ -23,7 +23,35 @@
 
 // Inserting HTML markup and CSS Styles into the document
 
-function sharerboxIcons(socialNetworksList = 'facebook, twitter, whatsapp, reddit'){
+let sharerboxIconSize;
+
+function sharerboxIcons(socialNetworksList = 'facebook, twitter, whatsapp, reddit', iconSize = 45){
+
+
+	// Setting sharerbox icons size in pixels;
+
+	var maxSize = 100, minSize = 25, defaultSize = 45;
+	let maxMin = ['maximum', 'minimum'];
+
+	if (typeof iconSize === 'number'){
+		sharerboxIconSize = iconSize;
+	} else if (typeof iconSize === 'string' && Number(iconSize.replaceAll(/[a-z]*/ig, '')) != 0){
+		sharerboxIconSize = Number(iconSize.replaceAll(/[a-z]*/ig, ''));
+	}
+	
+	if (typeof sharerboxIconSize === 'number' && (sharerboxIconSize < minSize || sharerboxIconSize > maxSize)){
+		sharerboxIconSize < minSize ? (sharerboxIconSize = minSize, maxMin = maxMin[1]) : undefined;
+		sharerboxIconSize > maxSize ? (sharerboxIconSize = maxSize, maxMin = maxMin[0]) : undefined;
+
+		console.warn(`Currently the ${maxMin} accepted size value for SharerBox's icons is ${sharerboxIconSize}px, icon size set to ${maxMin} by default.\n\nAccepted Sharerbox icon size ranges are ${minSize}px-${maxSize}px`);
+	} else if(typeof sharerboxIconSize != 'number'){
+		sharerboxIconSize = defaultSize;
+		
+		console.warn(`The value introduced to set SharerBox icon size is not a number, icon size set to default (${sharerboxIconSize}px).\n\nAccepted Sharerbox icon size ranges are ${minSize}px-${maxSize}px`);
+	}
+
+	var sharerboExtraIconSize = Math.floor(sharerboxIconSize * 88.889 / 100);
+	
 
 	// variables for HTML social icons
 
@@ -206,7 +234,7 @@ function sharerboxIcons(socialNetworksList = 'facebook, twitter, whatsapp, reddi
 		height: fit-content;
 		margin: auto 0;
 		padding: 0;
-		transform: translateX(-45px);
+		transform: translateX(-${sharerboxIconSize}px);
 		transition: 0.25s linear;
 	}
 
@@ -221,20 +249,20 @@ function sharerboxIcons(socialNetworksList = 'facebook, twitter, whatsapp, reddi
 		display: flex;
 		flex-flow: column nowrap;
 		align-items: flex-start;
-		width: 45px;
+		width: ${sharerboxIconSize}px;
 		height: fit-content;
 		transition: 0.25s linear;
 	}
 
 	#sharerbox-social-icons-box:hover{
-		width: 90px;
+		width: ${sharerboxIconSize * 2}px;
 	}
 
 	.sharerbox-socialmedia-link{
 		display: block;
 		margin: 0;
 		padding: 0;
-		height: 45px;
+		height: ${sharerboxIconSize}px;
 	}
 
 	.sharerbox-icon-fig, #sharerbox-share-icon-fig{
@@ -243,13 +271,13 @@ function sharerboxIcons(socialNetworksList = 'facebook, twitter, whatsapp, reddi
 		cursor: pointer;
 		padding: 0;
 		margin: 0;
-		width: 45px;
-		height: 45px;
+		width: ${sharerboxIconSize}px;
+		height: ${sharerboxIconSize}px;
 		transition: 0.25s linear;
 	}
 
 	.sharerbox-icon-fig:hover{
-		width: 90px;
+		width: ${sharerboxIconSize * 2}px;
 	}
 
 	.sharerbox-icon{
@@ -258,8 +286,8 @@ function sharerboxIcons(socialNetworksList = 'facebook, twitter, whatsapp, reddi
 		object-position: right;
 		padding: 0;
 		margin: 0;
-		width: 45px;
-		height: 45px;
+		width: ${sharerboxIconSize}px;
+		height: ${sharerboxIconSize}px;
 
 	}
 
@@ -301,8 +329,8 @@ function sharerboxIcons(socialNetworksList = 'facebook, twitter, whatsapp, reddi
 	}
 
 	.extra-buttons{
-		width: 40px;
-		height: 40px;
+		width: ${sharerboExtraIconSize}px;
+		height: ${sharerboExtraIconSize}px;
 		border-radius: 100%;
 		border: solid 1px gray;
 		transition: 0.1s linear;
@@ -314,7 +342,20 @@ function sharerboxIcons(socialNetworksList = 'facebook, twitter, whatsapp, reddi
 		transform: scale(1.07);
 	}
 
-	#send-email-button, #copy-link-icon{
+	#other-social-media-fig{
+		display: none;
+	}
+
+	#other-social-media-fig:hover svg{
+		fill: dodgerblue;
+		border-color: dodgerblue;
+	}
+
+	#other-social-media-fig:active svg{
+		filter: brightness(85%);
+	}
+
+	#send-email-button, #copy-link-icon, #other-social-media-button{
 		background: white;
 	}
 
@@ -345,8 +386,10 @@ function sharerboxIcons(socialNetworksList = 'facebook, twitter, whatsapp, reddi
 
 	#sharerbox-share-icon{
 		opacity: 0.5;
-		width: 40px;
-		height: 40px;
+		stroke: white;
+		stroke-width: 0.5;
+		width: ${sharerboExtraIconSize}px;
+		height: ${sharerboExtraIconSize}px;
 		transition: 0.25s linear;
 	}
 
@@ -364,15 +407,21 @@ function sharerboxIcons(socialNetworksList = 'facebook, twitter, whatsapp, reddi
 		<div id="sharerbox-social-icons-box">
 			${socialHTMLIcons}
 		</div>
+		<!-- Additional social-media Button -->
+		<object class="extra-buttons-fig" id="other-social-media-fig">
+			<svg id="other-social-media-button" class="extra-buttons" enable-background="new 0 0 493.497 493.497" version="1.1" viewBox="0 0 493.5 493.5" xmlns="http://www.w3.org/2000/svg">
+				<path d="m224.25 79.25v145h-145v45h145v145h45v-145h145v-45h-145v-145h-45z" style="paint-order:markers fill stroke"/>
+			</svg>
+		</object>
 		<!--Send Email Button-->
-			<object class="extra-buttons-fig" id="send-email-button-fig">
-				<a class="sharerbox-socialmedia-link" id="send-email-link" title="Email">
-					<svg class="extra-buttons" id="send-email-button" enable-background="new 0 0 493.497 493.497" viewBox="0 0 493.5 493.5" >
-						<rect id="sb-email-envelope-bg" x="90.963" y="146.38" width="314.71" height="197.09" fill="white"/>
-						<path d="m389.17 130.44h-284.84c-19.431 0-35.239 15.806-35.239 35.239v162.13c0 19.431 15.807 35.239 35.239 35.239h284.84c19.431 0 35.238-15.807 35.238-35.239v-162.13c.00072-19.432-15.806-35.239-35.237-35.239zm11.746 35.239v162.13c0 1.8533-.522 3.5453-1.291 5.1048l-83.043-83.049 84.31-84.31c0 .0468.0238.0806.0238.12672zm-308.33 162.13v-162.13c0-.0461.02376-.0792.02376-.126l84.31 84.31-83.048 83.048c-.7632-1.5595-1.2852-3.2508-1.2852-5.1048zm157.79-44.952c-1.9382 1.9375-5.3122 1.9375-7.2504 0l-128.92-128.92h265.09zm-56.849-16.38 32.989 32.99c5.4086 5.4079 12.595 8.3844 20.235 8.3844 7.6392 0 14.827-2.9765 20.235-8.3844l32.99-32.99 73.073 73.079h-252.6z" stroke-width=".72"/>
-					</svg>
-				</a>
-			</object>
+		<object class="extra-buttons-fig" id="send-email-button-fig">
+			<a class="sharerbox-socialmedia-link" id="send-email-link" title="Email">
+				<svg class="extra-buttons" id="send-email-button" enable-background="new 0 0 493.497 493.497" viewBox="0 0 493.5 493.5" >
+					<rect id="sb-email-envelope-bg" x="90.963" y="146.38" width="314.71" height="197.09" fill="white"/>
+					<path d="m389.17 130.44h-284.84c-19.431 0-35.239 15.806-35.239 35.239v162.13c0 19.431 15.807 35.239 35.239 35.239h284.84c19.431 0 35.238-15.807 35.238-35.239v-162.13c.00072-19.432-15.806-35.239-35.237-35.239zm11.746 35.239v162.13c0 1.8533-.522 3.5453-1.291 5.1048l-83.043-83.049 84.31-84.31c0 .0468.0238.0806.0238.12672zm-308.33 162.13v-162.13c0-.0461.02376-.0792.02376-.126l84.31 84.31-83.048 83.048c-.7632-1.5595-1.2852-3.2508-1.2852-5.1048zm157.79-44.952c-1.9382 1.9375-5.3122 1.9375-7.2504 0l-128.92-128.92h265.09zm-56.849-16.38 32.989 32.99c5.4086 5.4079 12.595 8.3844 20.235 8.3844 7.6392 0 14.827-2.9765 20.235-8.3844l32.99-32.99 73.073 73.079h-252.6z" stroke-width=".72"/>
+				</svg>
+			</a>
+		</object>
 		<!--Copy URL Button-->
 		<object class="extra-buttons-fig" id="copy-link-fig" title="Copy Link">
 			<svg class="extra-buttons" id="copy-link-icon" width="1306.7" height="1306.7" viewBox="0 0 1306.7 1306.7">
@@ -425,6 +474,8 @@ function sharerSetup(behavior = 'popup', position = 'right', color = 'black', vi
 
 	var emailButtonLink = document.getElementById('send-email-link');
 	var copyLink = document.getElementById('copy-link-icon');
+
+	var otherSocialMedia = document.getElementById('other-social-media-fig');
 
 	var currentUrl = encodeURIComponent(document.URL);
 
@@ -538,8 +589,22 @@ function sharerSetup(behavior = 'popup', position = 'right', color = 'black', vi
 
 	copyLink.addEventListener('click', copyURL);
 
+	// Implementing Share API for compatible browsers or devices
+	if (navigator.share) {
+
+		const shareData = {
+			title: document.head.getElementsByTagName('title')[0].innerText,
+			text: shareDescription,
+			url: document.URL
+		};
+
+		otherSocialMedia.style.display = 'block';
+		otherSocialMedia.onclick = ()=> navigator.share(shareData);
+	}
+
 	// Sets the share icon color
 	color ? shareIcon.style.fill = color : undefined;
+	color.match(/white|#[f]+$|rgb(a)?\(\s?(255[\,]?\s?){3}\s*[\d.]*\s?\)/ig) ? shareIcon.style.stroke = 'black' : undefined;
 
 	// Sets ShareBox icons position to the right
 	if(position === 'right'){
@@ -551,7 +616,7 @@ function sharerSetup(behavior = 'popup', position = 'right', color = 'black', vi
 		shareIconWrap.remove();
 		sharerboxContainer.insertAdjacentElement('afterbegin', shareIconWrap);
 
-		sharerboxContainer.style.cssText = 'left: unset; right: 0px; transform: translateX(45px)';
+		sharerboxContainer.style.cssText = `left: unset; right: 0px; transform: translateX(${sharerboxIconSize}px)`;
 		socialIconsWrap.style.alignItems = 'flex-end';
 		hiddenIconsContainer.style.alignItems = 'flex-end';
 		shareIcon.style.transform = 'rotateY(180deg)';
@@ -568,7 +633,7 @@ function sharerSetup(behavior = 'popup', position = 'right', color = 'black', vi
 		shareIconWrap.remove();
 		sharerboxContainer.appendChild(shareIconWrap);
 
-		sharerboxContainer.style.cssText = 'left: 0px; right: unset; transform: translateX(-45px)';
+		sharerboxContainer.style.cssText = `left: 0px; right: unset; transform: translateX(-${sharerboxIconSize}px)`;
 		socialIconsWrap.style.alignItems = 'flex-start';
 		hiddenIconsContainer.style.alignItems = 'flex-start';
 
@@ -586,7 +651,7 @@ function sharerSetup(behavior = 'popup', position = 'right', color = 'black', vi
 
 			if(shareIcon.style.transform === 'none'){
 				shareIcon.style.transform = 'rotateY(180deg)';
-				sharerboxContainer.style.transform = 'translateX(45px)';
+				sharerboxContainer.style.transform = `translateX(${sharerboxIconSize}px)`;
 			}else{
 				shareIcon.style.transform = 'none';
 				sharerboxContainer.style.transform = 'none';
@@ -596,7 +661,7 @@ function sharerSetup(behavior = 'popup', position = 'right', color = 'black', vi
 
 			if(shareIcon.style.transform === 'rotateY(180deg)'){
 				shareIcon.style.transform = 'none';
-				sharerboxContainer.style.transform = 'translateX(-45px)';
+				sharerboxContainer.style.transform = `translateX(-${sharerboxIconSize}px)`;
 			}else{
 				shareIcon.style.transform = 'rotateY(180deg)';
 				sharerboxContainer.style.transform = 'none';

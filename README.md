@@ -3,7 +3,7 @@
 Free minimalist and lightweight JavaScript-based social-media sharer for websites.
 
 <p align="center"><a href="https://astudillojuanf.github.io/sharerbox/" target="_blank"><img height="250" src="https://astudillojuanf.github.io/sharerbox/images/cover/sharerbox.svg"></a></p>
-<p align="center"><i><b>Version:</b> 0.7.1</i></p>
+<p align="center"><i><b>Version:</b> 0.8.0</i></p>
 
 ## Description
 
@@ -71,6 +71,12 @@ OR:
 sharerboxIcons('site1 site2 site3 site...');
 ```
 
+Additionally, you can customize the size of the buttons by adding an additional numeric parameter representing a given number of pixels (accepted size ranges: 25-100 pixels):
+
+```javascript
+sharerboxIcons('site1, site2, site3, site...', 45);
+```
+
 _(if this function is leaved blank sharerbox will display it's default buttons)_.
 
 ### Behavior Settings
@@ -90,7 +96,7 @@ Example:
 sharerSetup('tab', 'right', 'black', 'visible', 'Custom description');
 ```
 
-_(if these options are leaved blank sharerbox will display it's default behavior)_.
+_(if these options are leaved blank SharerBox will run with it's default behavior)_.
 
 ## Example
 
@@ -100,7 +106,8 @@ Full Example:
 	window.onload = function(){
 
 		// Buttons list: 'site1, site2, site3'
-		sharerboxIcons('facebook, twitter, whatsapp, reddit');
+		// Buttons size: number
+		sharerboxIcons('facebook, twitter, whatsapp, reddit', 45);
 
 		// Setup arguments: Behavior, Position, Color, Visibility, Description
 		sharerSetup('pop-up', 'left', 'black', true, 'custom message or description goes here (optional)');
