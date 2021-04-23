@@ -11,7 +11,7 @@ Free minimalist and lightweight JavaScript-based social-media sharer for website
 
   Integrating SharerBox directly on your website for social-media sharing instead of external APIs should significantly reduce loading speeds for visitors connected from slow networks, which will result on improved SEO indexation and enhanced user experience and device portability, specially for visitors connected from old computers or low-end devices. Plus, since there is no need for integrating obscure third-party code there is also no unauthorized recolection of private user information derived from using SharerBox.
 
-  SharerBox is currently a personal project, but it's integration process is intended to be easy for unexperienced users as well as very easy to customize for developers
+  SharerBox is currently a personal project, but it's integration process is intended to be easy for unexperienced users as well as very easy to customize for developers.
 
 <h3 align="center"><b>Support:</b></h3>
 
@@ -26,11 +26,11 @@ Free minimalist and lightweight JavaScript-based social-media sharer for website
 	<img width="50px" height="50px" src="https://astudillojuanf.github.io/sharerbox/icons/telegram-icon-soft-square.svg">
 </p>
 
-## Installation:
+## Integration:
 
-1. Download and store Sharerbox's **JavaScript File** on your server.
+1. Download SharerBox's JavaScript File and store it on your server.
 
-2. Asynchronously load the script inside your webpage's **HTML** `<head>` tag using the `async` attribute.
+2. Load the script asynchronously within your webpage's **HTML** `<head>` tag using the `async` attribute.
 
 	Example:
 	```html
@@ -50,13 +50,13 @@ Free minimalist and lightweight JavaScript-based social-media sharer for website
 ```
 4. Save Changes and reload your site.
 
-* All done, sharerbox will be now enabled on your site.
+* All done, sharerbox will now be enabled on your site.
 
 ## Options:
 
 ### Icons
 
-* **Social-Networks:** `'site1, site2, site3'` A string list of social-network names separated by spaces of commas.
+* **Social-Networks:** `'site1, site2, site3'` A list of social-network names separated by spaces of commas.
 
 ### Setting Icons
 
