@@ -1,7 +1,7 @@
 /*
 					    				Sharerbox
 
-			    		Version: 0.8.0; Author: Juan Astudillo
+			    		Version: 0.8.1; Author: Juan Astudillo
 
 	* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 	*																				*
@@ -459,7 +459,7 @@ function sharerSetup(behavior = 'popup', position = 'right', color = 'black', vi
 	var shareIconWrap = document.getElementById('sharerbox-share-icon-wrap');
 	var shareIcon = document.getElementById('sharerbox-share-icon');
 
-	var socialIconsCollection = document.getElementsByClassName('sharerbox-icon');
+	var socialIconsCollection = document.getElementsByClassName('sharerbox-socialmedia-link');
 
 	// Link elements variables
 
@@ -504,7 +504,7 @@ function sharerSetup(behavior = 'popup', position = 'right', color = 'black', vi
 		var whatsappURL = `whatsapp://send?text=${customDescription}%20${currentUrl}`;
 
 		// Reddit sharer hyperlink
-		var redditURL = `https://www.reddit.com/submit/?url=${currentUrl}`;
+		var redditURL = `https://www.reddit.com/submit/?url=${currentUrl}&title=${customDescription}`;
 
 		// LinkedIn sharer hyperlink
 		var linkedinURL = `https://www.linkedin.com/sharing/share-offsite/?url=${currentUrl}`;
