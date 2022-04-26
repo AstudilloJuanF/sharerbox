@@ -3,7 +3,7 @@
 Free minimalist and lightweight JavaScript-based social-media sharer for websites.
 
 <p align="center"><a href="https://astudillojuanf.github.io/sharerbox/" target="_blank"><img height="250" src="https://astudillojuanf.github.io/sharerbox/images/cover/sharerbox.svg"></a></p>
-<p align="center"><i><b>Version:</b> <span id="sharerbox-semantic-version-number">0.8.1</span></i></p>
+<p align="center"><i><b>Version:</b> 0.8.0</i></p>
 
 ## Description
 
@@ -11,7 +11,7 @@ Free minimalist and lightweight JavaScript-based social-media sharer for website
 
   Integrating SharerBox directly on your website for social-media sharing instead of external APIs should significantly reduce loading speeds for visitors connected from slow networks, which will result on improved SEO indexation and enhanced user experience and device portability, specially for visitors connected from old computers or low-end devices. Plus, since there is no need for integrating obscure third-party code there is also no unauthorized recolection of private user information derived from using SharerBox.
 
-  SharerBox is currently a personal project, but it's integration process is intended to be easy for unexperienced users as well as very easy to customize for developers.
+  SharerBox is currently a personal project, but it's integration process is intended to be easy for unexperienced users as well as very easy to customize for developers
 
 <h3 align="center"><b>Support:</b></h3>
 
@@ -26,66 +26,83 @@ Free minimalist and lightweight JavaScript-based social-media sharer for website
 	<img width="50px" height="50px" src="https://astudillojuanf.github.io/sharerbox/icons/telegram-icon-soft-square.svg">
 </p>
 
-## Integration:
+## Installation:
 
-1. Download SharerBox's JavaScript File and store it on your server.
+1. Download and store Sharerbox's **JavaScript File** on your server.
 
-2. Load the script asynchronously within your webpage's **HTML** `<head>` tag using the `async` attribute.
+2. Asynchronously load the script inside your webpage's **HTML** `<head>` tag using the `async` attribute.
 
 	Example:
 	```html
 	<script type="application/javascript" src="path/to/sharerbox.js" async></script>
 	```
 
-3. Copy this code snippet anywhere inside or after your **HTML** page's `<body>` tag.
+3. Copy this code snippet anywhere inside or after your **HTML** page's `<body>` tag.<br><br>Or alternatively, use your own logic to execute the code.
 
 	Example:
 ```html
 <script>
-	window.onload = function(){
-		sharerboxIcons( /* list your preferred social-networks here, else options are set to default */ );
-		sharerSetup( /* Behavior options go here, else options are set to default */ );
-	};
+	window.addEventListener('load', function() {
+		sharerbox(/* list your preferred social-networks and other options here, if blank options will be set to default */ );
+	});
 </script>
 ```
 4. Save Changes and reload your site.
 
-* All done, sharerbox will now be enabled on your site.
+* All done, sharerbox will be now enabled on your website.
 
 ## Options:
 
-### Icons
+### Setting options
 
-* **Social-Networks:** `'site1, site2, site3'` A list of social-network names separated by spaces of commas.
+You can customize Sharerbox by passing options as object properties to the `sharerbox()` function inside your code snippet.
 
-### Setting Icons
+*(if no arguments are passed to the function SharerBox behavior will be set to default)*
 
-You can specify which social-network icons will be displayed by going to the `sharerboxIcons()` function inside the code snippet pasted within  your `<body>` tag and typing a string list of supported social-network items separated by spaces or commas, the full list must be wrapped around quotation marks.
+Example:
+ ```javascript
+ sharerbox({
+	propertyA: 'string',
+	propertyB: 50,
+	propertyC: true
+});
+```
+
+### Icon Options
+
+* **Social-Networks:** A list of supported social-network names passed as a string (separated by spaces or commas) or as an array.
+
+* **iconSize:** Sets the size of the icons in pixels. It accepts numeric values (default size: 45 pixels, accepted size ranges: 25 to 100 pixels).
 
 Example:
 ```javascript
-sharerboxIcons('site1, site2, site3, site...');
-```
-OR:
-```javascript
-sharerboxIcons('site1 site2 site3 site...');
-```
-
-Additionally, you can customize the size of the buttons by adding an additional numeric parameter representing a given number of pixels (accepted size ranges: 25-100 pixels):
-
-```javascript
-sharerboxIcons('site1, site2, site3, site...', 45);
+sharerbox({
+	// Icon list: 'site1, site2, site3...'
+	// Icon size: number
+	socialNetworks: 'site1, site2, site3, site...'),
+	iconSize: 45
+});
 ```
 
-_(if this function is leaved blank sharerbox will display it's default buttons)_.
-
-### Behavior Settings
+### Other Options
 
 * **Behavior:** `'pop-up'` _(default)_ or `'new tab'`; Sets how the sharer menus will be deployed.
-* **Position:** `'left'` or `'right'` _(default)_; Sets the position of the sharebar in the screen.
+* **Position:** `'left'` or `'right'` _(default)_; Sets the position of the sharebar on the screen.
 * **Color:** `'color name'` _(Black by default)._; Selects a color for the toggle button.
-* **Visibility:** `'visible'`, `'yes'` or `true`; Enables the icon bar default visibility _(`hidden` by default)_.
-* **Description:** `'quoted text'`; Creates a predefined message or website description for social-networks.
+* **Visibility:** `'visible'`, `'yes'` or `true`; Changes the icon bar default visibility _(`hidden` by default)_.
+* **Description:** `'quoted text'`; Sets a predefined message or description of your website for people to share on social-networks.
+
+Example:
+```javascript
+sharerbox({
+	// Setup arguments: Behavior, Position, Color, Visibility, Message
+	behavior: 'popup',
+	position: 'right',
+	color: 'black',
+	visibility: true,
+	message: 'Write a custom message/description here (optional)'
+});
+```
 
 ### Setting Behavior
 
@@ -103,15 +120,21 @@ _(if these options are leaved blank SharerBox will run with it's default behavio
 Full Example:
 ```html
 <script>
-	window.onload = function(){
+	window.addEventListener('load', function(){
 
-		// Buttons list: 'site1, site2, site3'
-		// Buttons size: number
-		sharerboxIcons('facebook, twitter, whatsapp, reddit', 45);
-
-		// Setup arguments: Behavior, Position, Color, Visibility, Description
-		sharerSetup('pop-up', 'left', 'black', true, 'custom message or description goes here (optional)');
-	};
+		sharerbox({
+			// Icon list: 'site1, site2, site3...'
+			// Icon size: number
+			socialNetworks: 'facebook twitter whatsapp linkedin reddit',
+			iconSize: 45,
+			// Setup arguments: Behavior, Position, Color, Visibility, Message
+			behavior: 'popup',
+			position: 'right',
+			color: 'black',
+			visibility: true,
+			message: 'Write a custom message/description here (optional)'
+		});
+	});
 </script>
 ```
 
