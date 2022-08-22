@@ -3,7 +3,7 @@
 Free minimalist and lightweight JavaScript-based social-media sharer for websites.
 
 <p align="center"><a href="https://astudillojuanf.github.io/sharerbox/" target="_blank"><img height="250" src="https://astudillojuanf.github.io/sharerbox/images/cover/sharerbox.svg"></a></p>
-<p align="center"><i><b>Version:</b> <span id="sharerbox-semantic-version-number">0.9.0</span></i></p>
+<p align="center"><i><b>Version:</b> <span id="sharerbox-semantic-version-number">0.10.0</span></i></p>
 
 ## Description
 
@@ -24,6 +24,7 @@ Free minimalist and lightweight JavaScript-based social-media sharer for website
 	<img width="50px" height="50px" src="https://astudillojuanf.github.io/sharerbox/icons/pinterest-icon-soft-square.svg">
 	<img width="50px" height="50px" src="https://astudillojuanf.github.io/sharerbox/icons/tumblr-icon-soft-square.svg">
 	<img width="50px" height="50px" src="https://astudillojuanf.github.io/sharerbox/icons/telegram-icon-soft-square.svg">
+	<img width="50px" height="50px" src="https://astudillojuanf.github.io/sharerbox/icons/trello-logo.svg">
 </p>
 
 ## Installation:

@@ -1,7 +1,7 @@
 /*
 					    				Sharerbox
 
-			    		Version: 0.9.0; Author: Juan Astudillo
+			    		Version: 0.10.0; Author: Juan Astudillo
 
 	* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 	*																				*
@@ -57,7 +57,7 @@ function sharerbox(options) {
 
 	
 	// Supported & default social networks
-	let supportedSocialNetworks = 'twitter, facebook, whatsapp, linkedin, reddit, tumblr, pinterest, telegram';
+	let supportedSocialNetworks = 'twitter, facebook, whatsapp, linkedin, reddit, tumblr, pinterest, telegram, trello';
 	let DefaultsocialNetworks = 'twitter, facebook, whatsapp, reddit';
 
 	// Default options
@@ -256,6 +256,23 @@ function sharerbox(options) {
 		</a>
 	</object>`;
 
+	var trelloHTML = `<!--Trello-->
+	<object class="sharerbox-icon-fig" id="trello-fig">
+		<a class="sharerbox-socialmedia-link" id="trello-link" target="_blank">
+			<svg class="sharerbox-icon" id="trello-icon" viewBox="0 0 256 256" preserveAspectRatio="xMidYMid">
+				<defs>
+					<linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="a">
+						<stop stop-color="#0091E6" offset="0%"/>
+						<stop stop-color="#0079BF" offset="100%"/>
+					</linearGradient>
+				</defs>
+				<rect fill="url(#a)" width="256" height="256" rx="25"/>
+				<rect fill="#FFF" x="144.64" y="33.28" width="78.08" height="112" rx="12"/>
+				<rect fill="#FFF" x="33.28" y="33.28" width="78.08" height="176" rx="12"/>
+			</svg>
+		</a>
+	</object>`;
+
 	// Transform sharerbox's social networks options string to an array
 	var socialNetworksArray;
 
@@ -297,6 +314,9 @@ function sharerbox(options) {
 			break;
 			case 'telegram':
 				socialHTMLIcons = socialHTMLIcons.concat(`${telegramHTML}\n`);
+			break;
+			case 'trello':
+				socialHTMLIcons = socialHTMLIcons.concat(`${trelloHTML}\n`);
 			break;
 		}
 	}
@@ -409,6 +429,10 @@ function sharerbox(options) {
 
 		#telegram-fig{
 			background: linear-gradient(-135deg, #37aee2, #1e96c8);
+		}
+
+		#trello-fig{
+			background: linear-gradient(0deg, #0079BF, #0091E6);
 		}
 
 		.extra-buttons-fig{
@@ -563,6 +587,7 @@ function sharerbox(options) {
 	var pinterestLink = document.getElementById('pinterest-link');
 	var tumblrLink = document.getElementById('tumblr-link');
 	var telegramLink = document.getElementById('telegram-link');
+	var trelloLink = document.getElementById('trello-link');
 
 	var emailButtonLink = document.getElementById('send-email-link');
 	var copyLink = document.getElementById('copy-link-icon');
@@ -608,7 +633,10 @@ function sharerbox(options) {
 		var tumblrURL = `https://www.tumblr.com/widgets/share/tool/preview?shareSource=legacy&canonicalUrl=&url=${currentUrl}&title=${customDescription}`;
 
 		// Telegram sharer hyperlink
-		var telegramURL = `tg://msg_url?url=${currentUrl}&text=${customDescription}`;
+		var telegramURL = `https://t.me/share/url?url=${currentUrl}&text=${customDescription}`;
+
+		// Trello sharer hyperlink
+		var trelloURL = `https://trello.com/add-card?url=${currentUrl}&name=${customDescription}&desc=${currentUrl}&mode=popup`;
 
 		//Email
 		var sendEmailURL = `mailto:?subject=${customDescription}&body=${currentUrl}`;
@@ -636,28 +664,32 @@ function sharerbox(options) {
 
 		tumblrLink ? tumblrLink.onclick = function() {openWindow(tumblrURL)} : undefined; // Tumblr
 
-		telegramLink ? telegramLink.onclick = function() {openWindow(telegramURL)} : undefined; // telegram
+		telegramLink ? telegramLink.onclick = function() {openWindow(telegramURL)} : undefined; // Telegram
+
+		trelloLink ? trelloLink.onclick = function() {openWindow(trelloURL)} : undefined; // Trello
 
 
 	} else if (behavior.match(/(\btab\b|new-tab|new tab)/)) {
 
 		// HREF attributes for new tabs
 
-		fbLink ? fbLink.href = facebookURL: undefined; // Facebook
+		fbLink ? fbLink.href = facebookURL : undefined; // Facebook
 
-		twLink ? twLink.href = tweetURL: undefined; // Twitter
+		twLink ? twLink.href = tweetURL : undefined; // Twitter
 
-		wsLink ? wsLink.href = whatsappURL: undefined; // WhatsApp
+		wsLink ? wsLink.href = whatsappURL : undefined; // WhatsApp
 
-		redditLink ? redditLink.href = redditURL: undefined; // Reddit
+		redditLink ? redditLink.href = redditURL : undefined; // Reddit
 
-		linkedinLink ? linkedinLink.href = linkedinURL: undefined; // LinkedIn
+		linkedinLink ? linkedinLink.href = linkedinURL : undefined; // LinkedIn
 
-		pinterestLink ? pinterestLink.href = pinterestURL: undefined; // Pinterest
+		pinterestLink ? pinterestLink.href = pinterestURL : undefined; // Pinterest
 
-		tumblrLink ? tumblrLink.href = tumblrURL: undefined; // Tumblr
+		tumblrLink ? tumblrLink.href = tumblrURL : undefined; // Tumblr
 
-		telegramLink ? telegramLink.href = telegramURL: undefined; // telegram
+		telegramLink ? telegramLink.href = telegramURL : undefined; // Telegram
+		
+		trelloLink ? (trelloURL = trelloURL.replace('&mode=popup', ''), trelloLink.href = trelloURL) : undefined; // Trello
 
 	}
 
