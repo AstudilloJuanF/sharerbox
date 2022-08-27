@@ -105,17 +105,6 @@ sharerbox({
 });
 ```
 
-### Setting Behavior
-
-To customize Sharerbox overall behavior enter these options into the `sharerSetup()` function located inside the code snippet pasted on your page's `<body>` tag, each argument must be written as a quoted word (_'word'_), each quoted word separated from each other by commas.
-
-Example:
-```javascript
-sharerSetup('tab', 'right', 'black', 'visible', 'Custom description');
-```
-
-_(if these options are leaved blank SharerBox will run with it's default behavior)_.
-
 ## Example
 
 Full Example:
@@ -138,7 +127,7 @@ Full Example:
 	});
 </script>
 ```
-
+_(Note: if no arguments are passed to the function SharerBox behavior will be set to default)_.
 
 <h2 align="center">Author</h2>
 
