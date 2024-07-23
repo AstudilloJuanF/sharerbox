@@ -134,5 +134,5 @@ _(Note: if no arguments are passed to the function SharerBox behavior will be se
 <p align="center">Juan Astudillo</p>
 
 <p align="center">
-	<a href="https://www.fiverr.com/astudillo_juan" target="_blank">Fiverr</a> | <a href="https://www.linkedin.com/in/juan-astudillo/"  target="_blank">LinkedIn</a> | <a href="mailto:astudillojuanfrancisco@gmail.com">Email</a>
+	<a href="https://www.fiverr.com/astudillo_juan" target="_blank">Fiverr</a> | <a href="https://www.linkedin.com/in/astudillojuanf/"  target="_blank">LinkedIn</a> | <a href="mailto:astudillojuanfrancisco@gmail.com">Email</a>
 </p>
