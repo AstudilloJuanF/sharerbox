@@ -18,7 +18,7 @@ Free minimalist and lightweight JavaScript-based social-media sharer for website
 <p align="center">
 	<img width="50px" height="50px" src="https://astudillojuanf.github.io/sharerbox/icons/facebook-logo.svg">
 	<img width="50px" height="50px" src="https://astudillojuanf.github.io/sharerbox/icons/whatsapp-icon-soft-square.svg">
-	<img width="50px" height="50px" src="https://astudillojuanf.github.io/sharerbox/icons/twitter-icon-soft-square.svg">
+	<img width="50px" height="50px" src="https://astudillojuanf.github.io/sharerbox/icons/twitter-x-icon-soft-square.svg">
 	<img width="50px" height="50px" src="https://astudillojuanf.github.io/sharerbox/icons/linkedin-logo.svg">
 	<img width="50px" height="50px" src="https://astudillojuanf.github.io/sharerbox/icons/reddit-icon-soft-square.svg">
 	<img width="50px" height="50px" src="https://astudillojuanf.github.io/sharerbox/icons/pinterest-icon-soft-square.svg">
