@@ -1,7 +1,7 @@
 /*
 					    				Sharerbox
 
-			    		Version: 0.10.1; Author: Juan Astudillo
+			    		Version: 0.11.0; Author: Juan Astudillo
 
 	* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 	*																				*
@@ -46,7 +46,8 @@ function sharerbox(options) {
 
 		if (typeof variable === type.toLowerCase()) {
 			return true;
-		} else {
+		} else {supportedSocialNetworks = supportedSocialNetworks.join(', ');
+			defaultSocialNetworks = defaultSocialNetworks.join(', ');
 			return false;
 		}
 	}
@@ -57,8 +58,28 @@ function sharerbox(options) {
 
 	
 	// Supported & default social networks
-	let supportedSocialNetworks = 'twitter, facebook, whatsapp, linkedin, reddit, tumblr, pinterest, telegram, trello';
-	let defaultSocialNetworks = 'twitter, facebook, whatsapp, reddit';
+	let supportedSocialNetworks = [
+		'x',
+		'facebook',
+		'whatsapp',
+		'linkedin',
+		'reddit',
+		'tumblr',
+		'pinterest',
+		'telegram',
+		'trello',
+		'mastodon',
+		'lemmy'
+	]
+	.join(', ');
+
+	let defaultSocialNetworks = [
+		'x',
+		'facebook',
+		'whatsapp',
+		'reddit'
+	]
+	.join(', ');
 
 	// Default options
 	let socialNetworksList = defaultSocialNetworks;
@@ -68,6 +89,13 @@ function sharerbox(options) {
     let color = 'black';
     let visibility = 'hidden';
     let message = '';
+
+	let defaultFediverseInstances = {
+		mastodon: 'mastodon.social',
+		lemmy: 'lemmy.ml'
+	};
+
+	let fediverseInstances = defaultFediverseInstances;
 
 	if (options) {
 
@@ -84,11 +112,22 @@ function sharerbox(options) {
 				socialNetworksList = 'none';
 			} else {
 				socialNetworksList = options.socialNetworks;
+
+				// Update Twitter label to new brand name (X)
+				socialNetworksList = options.socialNetworks.replaceAll(/(x)?(\/)?twitter(\/)?(x)?/ig, 'x');
 			}
 		}
 
 		if (socialNetworksList.toLowerCase() === 'all') {
 			socialNetworksList = supportedSocialNetworks;
+		}
+
+		if (options.fediverseInstances) {
+
+			let fedInst = options.fediverseInstances;
+			
+			URL.canParse(`https://${fedInst.mastodon}`) ? fediverseInstances.mastodon = fedInst.mastodon : null;
+			URL.canParse(`https://${fedInst.lemmy}`) ? fediverseInstances.lemmy = fedInst.lemmy : null;
 		}
 
 		options.iconSize ? iconSize = options.iconSize : null;
@@ -135,9 +174,9 @@ function sharerbox(options) {
 	// HTML element variables for social icons
 
 	var facebookHTML = `<!--Facebook-->
-	<object class="sharerbox-icon-fig" id="fb-fig">
-		<a class="sharerbox-socialmedia-link" id="fb-link" target="_blank">
-			<svg class="sharerbox-icon" id="fb-icon" viewBox="0 0 72 72">
+	<object class="sharerbox-icon-fig" id="facebook-fig">
+		<a class="sharerbox-socialmedia-link" id="facebook-link" target="_blank">
+			<svg class="sharerbox-icon" id="facebook-icon" viewBox="0 0 72 72">
 				<g transform="translate(-152,-43)">
 					<g transform="translate(152,43)">
 						<rect width="72" height="72" rx="0" ry="0" fill="#4267b2"/>
@@ -149,18 +188,18 @@ function sharerbox(options) {
 	</object>`;
 
 	var twitterHTML = `<!--Twitter/X-->
-	<object class="sharerbox-icon-fig" id="tw-fig">
-		<a class="sharerbox-socialmedia-link" id="twitter-x-link" target="_blank">
-			<svg viewBox="0 0 24 24" class="sharerbox-icon" id="tw-icon" fill="white">
+	<object class="sharerbox-icon-fig" id="twitterX-fig">
+		<a class="sharerbox-socialmedia-link" id="twitterX-link" target="_blank">
+			<svg viewBox="0 0 24 24" class="sharerbox-icon" id="twitterX-icon" fill="white">
 				<path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path>
 			</svg>
 		</a>
 	</object>`;
 
 	var whatsappHTML = `<!--Whatsapp-->
-	<object class="sharerbox-icon-fig" id="ws-fig">
-		<a class="sharerbox-socialmedia-link" id="ws-link" target="_blank">
-			<svg class="sharerbox-icon" id="ws-icon" width="1225px" height="1225px" viewBox="-2.73 0 1225 1225">
+	<object class="sharerbox-icon-fig" id="whatsapp-fig">
+		<a class="sharerbox-socialmedia-link" id="whatsapp-link" target="_blank">
+			<svg class="sharerbox-icon" id="whatsapp-icon" width="1225px" height="1225px" viewBox="-2.73 0 1225 1225">
 				<g transform="matrix(.95 0 0 .95 30.478 36.539)" stroke-width=".9">
 					<path d="m477.02 375.62c-10.111-22.479-20.756-22.929-30.375-23.323-7.8678-.3375-16.875-.3168-25.868-.3168-9 0-23.625 3.3822-35.993 16.889-12.375 13.507-47.25 46.16-47.25 112.57 0 66.417 48.375 130.59 55.118 139.61 6.75 9 93.382 149.64 230.58 203.74 114.03 44.965 137.23 36.021 161.98 33.771s79.861-32.646 91.111-64.167c11.25-31.514 11.25-58.528 7.875-64.174-3.375-5.625-12.375-9-25.875-15.75s-79.861-39.41-92.236-43.91-21.375-6.75-30.375 6.7644c-9 13.5-34.854 43.896-42.729 52.896-7.875 9.0207-15.75 10.146-29.25 3.3957-13.5-6.7707-56.974-21.01-108.55-66.994-40.127-35.775-67.219-79.96-75.094-93.473-7.875-13.5-.8442-20.812 5.9274-27.542 6.0606-6.0471 13.5-15.757 20.25-23.639 6.7356-7.8822 8.9856-13.507 13.486-22.507 4.5-9.0144 2.25-16.896-1.125-23.646s-29.608-73.503-41.611-100.19z" fill="#fff"/>
 					<path d="m994.19 219.73c-102-102.07-237.64-158.32-382.14-158.38-297.78 0-540.11 242.25-540.23 540.02-.0351 95.183 24.835 188.09 72.105 269.99l-76.64 279.84 286.38-75.094c78.905 43.031 167.74 65.707 258.15 65.742h.2325c297.73 0 540.1-242.3 540.23-540.05.049-144.31-56.095-280-158.08-382.08zm-382.14 830.92h-.1755c-80.585-.042-159.61-21.677-228.54-62.578l-16.404-9.7245-169.95 44.557 45.373-165.64-10.688-16.98c-44.95-71.473-68.681-154.07-68.646-238.88.0981-247.49 201.52-448.84 449.19-448.84 119.94.0495 232.66 46.8 317.45 131.64 84.776 84.839 131.43 197.62 131.39 317.57-.1062 247.5-201.53 448.87-449.01 448.87z" fill="#fff"/>
@@ -268,6 +307,31 @@ function sharerbox(options) {
 		</a>
 	</object>`;
 
+	var mastodonHTML = `<!--Mastodon-->
+	<object class="sharerbox-icon-fig" id="mastodon-fig">
+		<a class="sharerbox-socialmedia-link" id="mastodon-link" target="_blank">
+			<svg class="sharerbox-icon" id="mastodon-icon" viewBox="0 0 90 90" fill="white">
+				<path d="M 81.7014,23.4592 C 80.5616,15.12034 73.1774,8.54876 64.424,7.27536 62.9472,7.06019 57.3517,6.2771 44.3901,6.2771 H 44.2933 C 31.3281,6.2771 28.5465,7.06019 27.0697,7.27536 18.56,8.51348 10.78877,14.41838 8.903306,22.856 7.9964214,27.0113 7.899639,31.6181 8.068112,35.8439 8.308275,41.904 8.354874,47.9535 8.91406,53.989 c 0.38658,4.009 1.06096,7.9861 2.01809,11.9015 1.79226,7.2312 9.04735,13.249 16.15545,15.704 7.6103,2.5603 15.7945,2.9854 23.6364,1.2276 0.8626,-0.1976 1.7158,-0.4268 2.5593,-0.6879 1.9034,-0.5961 4.1366,-1.2628 5.7783,-2.4339 0.0225,-0.0164 0.041,-0.0376 0.054,-0.0621 0.013,-0.0244 0.0203,-0.0514 0.0212,-0.079 v -5.8484 c -4e-4,-0.0258 -0.0066,-0.0512 -0.0183,-0.0743 -0.0116,-0.0231 -0.0283,-0.0433 -0.049,-0.0592 -0.0206,-0.0159 -0.0446,-0.027 -0.0701,-0.0326 -0.0256,-0.0056 -0.0521,-0.0055 -0.0776,3e-4 -5.0242,1.181 -10.1727,1.773 -15.3382,1.7637 -8.8896,0 -11.2805,-4.1518 -11.9652,-5.8802 -0.5503,-1.4938 -0.8998,-3.0521 -1.0395,-4.6351 -0.0014,-0.0265 0.0036,-0.0531 0.0145,-0.0774 0.0109,-0.0244 0.0276,-0.0458 0.0485,-0.0627 0.021,-0.0168 0.0457,-0.0285 0.0721,-0.0342 0.0264,-0.0057 0.0538,-0.0052 0.08,0.0015 4.9405,1.173 10.005,1.765 15.0873,1.7637 1.2223,0 2.441,0 3.6634,-0.0317 5.1115,-0.1411 10.499,-0.3986 15.5281,-1.3652 0.1255,-0.0246 0.2509,-0.0458 0.3585,-0.0776 7.9325,-1.4991 15.4815,-6.2047 16.2486,-18.1203 0.0287,-0.4691 0.1004,-4.9137 0.1004,-5.4005 0.0036,-1.6543 0.5413,-11.7357 -0.0789,-17.9298 z M 69.4925,53.1918 H 61.1514 V 33.0855 c 0,-4.2329 -1.7923,-6.3917 -5.4378,-6.3917 -4.0075,0 -6.0148,2.5538 -6.0148,7.5981 v 11.0055 h -8.291 V 34.2919 c 0,-5.0443 -2.0109,-7.5981 -6.0184,-7.5981 -3.624,0 -5.4342,2.1588 -5.4378,6.3917 v 20.1063 h -8.334 V 32.4752 c 0,-4.2329 1.0981,-7.5957 3.2942,-10.0884 2.2654,-2.4868 5.237,-3.7637 8.9255,-3.7637 4.2691,0 7.4952,1.6155 9.6459,4.8431 l 2.0755,3.4287 2.079,-3.4287 c 2.1507,-3.2276 5.3768,-4.8431 9.6388,-4.8431 3.6849,0 6.6564,1.2769 8.929,3.7637 2.1962,2.4904 3.2942,5.8532 3.2942,10.0884 z" fill="inherit" />
+			</svg>
+		</a>
+	</object>`;
+
+	var lemmyHTML = `<!--Lemmy-->
+	<object class="sharerbox-icon-fig" id="lemmy-fig">
+		<a class="sharerbox-socialmedia-link" id="lemmy-link" target="_blank">
+			<svg class="sharerbox-icon" id="lemmy-icon" viewBox="0 0 1024 1024">
+				<g transform="translate(-1.0231016e-6,-58.039721)">
+					<path style="color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:medium;line-height:normal;font-family:sans-serif;font-variant-ligatures:normal;font-variant-position:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-alternates:normal;font-feature-settings:normal;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;writing-mode:lr-tb;direction:ltr;text-orientation:mixed;dominant-baseline:auto;baseline-shift:baseline;text-anchor:start;white-space:normal;shape-padding:0;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;vector-effect:none;fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#ffffff;stroke-width:28;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate" d="m 167.03908,270.78735 c -0.94784,-0.002 -1.8939,0.004 -2.83789,0.0215 -4.31538,0.0778 -8.58934,0.3593 -12.8125,0.8457 -33.78522,3.89116 -64.215716,21.86394 -82.871086,53.27344 -18.27982,30.77718 -22.77749,64.66635 -13.46094,96.06837 9.31655,31.40203 31.88488,59.93174 65.296886,82.5332 0.20163,0.13618 0.40678,0.26709 0.61523,0.39258 28.65434,17.27768 57.18167,28.93179 87.74218,34.95508 -0.74566,12.61339 -0.72532,25.5717 0.082,38.84375 2.43989,40.10943 16.60718,77.03742 38.0957,109.67187 l -77.00781,31.4375 c -8.30605,3.25932 -12.34178,12.68234 -8.96967,20.94324 3.37211,8.2609 12.84919,12.16798 21.06342,8.68371 l 84.69727,-34.57617 c 15.70675,18.72702 33.75346,35.68305 53.12109,50.57032 0.74013,0.56891 1.4904,1.12236 2.23437,1.68554 l -49.61132,65.69141 c -5.45446,7.0474 -4.10058,17.19288 3.01098,22.5634 7.11156,5.37052 17.24028,3.89649 22.52612,-3.27824 l 50.38672,-66.71876 c 27.68572,17.53469 57.07524,31.20388 86.07227,40.25196 14.88153,27.28008 43.96965,44.64648 77.58789,44.64648 33.93762,0 63.04252,-18.68693 77.80082,-45.4375 28.7072,-9.21295 57.7527,-22.93196 85.1484,-40.40234 l 51.0977,67.66016 c 5.2858,7.17473 15.4145,8.64876 22.5261,3.27824 7.1115,-5.37052 8.4654,-15.516 3.011,-22.5634 l -50.3614,-66.68555 c 0.334,-0.25394 0.6727,-0.50077 1.0059,-0.75586 19.1376,-14.64919 37.0259,-31.28581 52.7031,-49.63476 l 82.5625,33.70507 c 8.2143,3.48427 17.6913,-0.42281 21.0634,-8.68371 3.3722,-8.2609 -0.6636,-17.68392 -8.9696,-20.94324 l -74.5391,-30.42773 c 22.1722,-32.82971 37.0383,-70.03397 40.1426,-110.46094 1.0253,-13.35251 1.2292,-26.42535 0.6387,-39.17578 30.3557,-6.05408 58.7164,-17.66833 87.2011,-34.84375 0.2085,-0.12549 0.4136,-0.2564 0.6153,-0.39258 33.412,-22.60147 55.9803,-51.13117 65.2968,-82.5332 9.3166,-31.40202 4.8189,-65.29118 -13.4609,-96.06837 -18.6553,-31.40951 -49.0859,-49.38228 -82.8711,-53.27344 -4.2231,-0.4864 -8.4971,-0.76791 -12.8125,-0.8457 -30.2077,-0.54448 -62.4407,8.82427 -93.4316,26.71484 -22.7976,13.16063 -43.3521,33.31423 -59.4375,55.30469 -44.9968,-25.75094 -103.5444,-40.25065 -175.4785,-41.43945 -6.4522,-0.10663 -13.0125,-0.10696 -19.67974,0.002 -80.18875,1.30929 -144.38284,16.5086 -192.87109,43.9922 -0.11914,-0.19111 -0.24287,-0.37932 -0.37109,-0.56446 -16.29,-22.764 -37.41085,-43.73706 -60.89649,-57.29493 -30.02247,-17.33149 -61.21051,-26.66489 -90.59375,-26.73633 z" />
+					<path style="display:inline;opacity:1;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:28;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" d="m 716.85595,362.96478 c 15.29075,-21.36763 35.36198,-41.10921 56.50979,-53.31749 66.66377,-38.48393 137.02617,-33.22172 170.08018,22.43043 33.09493,55.72093 14.98656,117.48866 -47.64399,159.85496 -31.95554,19.26819 -62.93318,30.92309 -97.22892,35.54473 M 307.14407,362.96478 C 291.85332,341.59715 271.78209,321.85557 250.63429,309.64729 183.97051,271.16336 113.60811,276.42557 80.554051,332.07772 47.459131,387.79865 65.56752,449.56638 128.19809,491.93268 c 31.95554,19.26819 62.93319,30.92309 97.22893,35.54473" />
+					<path style="display:inline;opacity:1;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:28;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" d="M 801.23205,576.8699 C 812.73478,427.06971 720.58431,321.98291 511.99999,325.38859 303.41568,328.79426 213.71393,428.0311 222.76794,576.8699 c 8.64289,142.08048 176.80223,246.40388 288.12038,246.40388 111.31815,0 279.45076,-104.5447 290.34373,-246.40388 z" />
+					<path style="display:inline;opacity:1;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" d="m 610.4991,644.28932 c 0,23.11198 18.70595,41.84795 41.78091,41.84795 23.07495,0 41.7809,-18.73597 41.7809,-41.84795 0,-23.112 -18.70594,-41.84796 -41.7809,-41.84796 -23.07496,0 -41.78091,18.73596 -41.78091,41.84796 z m -280.56002,0 c 0,23.32492 18.87829,42.23352 42.16586,42.23352 23.28755,0 42.16585,-18.9086 42.16585,-42.23352 0,-23.32494 -18.87829,-42.23353 -42.16585,-42.23353 -23.28757,0 -42.16586,18.90859 -42.16586,42.23353 z" />
+					<path style="display:inline;opacity:1;fill:none;stroke:#000000;stroke-width:32;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" d="m 339.72919,769.2467 -54.54422,72.22481 m 399.08582,-72.22481 54.54423,72.22481 M 263.68341,697.82002 175.92752,733.64353 m 579.85765,-35.82351 87.7559,35.82351" />
+					<path style="display:inline;opacity:1;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:28;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" d="m 512.00082,713.08977 c -45.86417,0 -75.13006,31.84485 -74.14159,71.10084 1.07048,42.51275 32.46865,71.10323 74.14159,71.10323 41.67296,0 74.05118,-32.99608 74.14161,-71.10323 0.0932,-39.26839 -28.27742,-71.10084 -74.14161,-71.10084 z" />
+				</g>
+			</svg>
+		</a>
+	</object>`;
+
 	// Transform sharerbox's social networks options string to an array
 	var socialNetworksArray;
 
@@ -289,7 +353,7 @@ function sharerbox(options) {
 			case 'facebook':
 				socialHTMLIcons = socialHTMLIcons.concat(`${facebookHTML}\n`);
 			break;
-			case 'twitter':
+			case 'x':
 				socialHTMLIcons = socialHTMLIcons.concat(`${twitterHTML}\n`);
 			break;
 			case 'whatsapp':
@@ -312,6 +376,12 @@ function sharerbox(options) {
 			break;
 			case 'trello':
 				socialHTMLIcons = socialHTMLIcons.concat(`${trelloHTML}\n`);
+			break;
+			case 'mastodon':
+				socialHTMLIcons = socialHTMLIcons.concat(`${mastodonHTML}\n`);
+			break;
+			case 'lemmy':
+				socialHTMLIcons = socialHTMLIcons.concat(`${lemmyHTML}\n`);
 			break;
 		}
 	}
@@ -355,10 +425,6 @@ function sharerbox(options) {
 			transition: 0.25s linear;
 		}
 
-		#sharerbox-social-icons-box:hover{
-			width: ${sharerboxIconSize * 2}px;
-		}
-
 		.sharerbox-socialmedia-link{
 			display: block;
 			margin: 0;
@@ -394,17 +460,16 @@ function sharerbox(options) {
 
 		}
 
-		#fb-fig{
+		#facebook-fig{
 			background: #4267b2;
 		}
 
-		#tw-fig{
+		#twitterX-fig{
 			background: #000000;
-
 		}
 
-		#ws-fig{
-			background: limegreen;
+		#whatsapp-fig{
+			background: #25D366;
 		}
 
 		#reddit-fig{
@@ -431,6 +496,14 @@ function sharerbox(options) {
 			background: linear-gradient(0deg, #0079BF, #0091E6);
 		}
 
+		#mastodon-fig{
+			background: linear-gradient(0deg, #563ACC, #6364FF);
+		}
+
+		#lemmy-fig{
+			background: #00A846;
+		}
+
 		.extra-buttons-fig{
 			margin: 5px 2px 0 2px;
 			position: relative;
@@ -439,7 +512,7 @@ function sharerbox(options) {
 		.extra-buttons{
 			width: ${sharerboxExtraIconSize}px;
 			height: ${sharerboxExtraIconSize}px;
-			aspect-ration: 1 / 1;
+			aspect-ratio: 1 / 1;
 			border-radius: 100%;
 			border: solid 1px gray;
 			transition: 0.1s linear;
@@ -489,6 +562,7 @@ function sharerbox(options) {
 		}
 
 		#sharerbox-share-icon-wrap{
+			z-index: -1;
 			visibility: visible;
 			transition: 0.25s linear;
 		}
@@ -575,15 +649,17 @@ function sharerbox(options) {
 
 	// Link elements variables
 
-	var fbLink = document.getElementById('fb-link');
-	var twLink = document.getElementById('twitter-x-link');
-	var wsLink = document.getElementById('ws-link');
+	var facebookLink = document.getElementById('facebook-link');
+	var twitterX_Link = document.getElementById('twitterX-link');
+	var whatsappLink = document.getElementById('whatsapp-link');
 	var redditLink = document.getElementById('reddit-link');
 	var linkedinLink = document.getElementById('linkedin-link');
 	var pinterestLink = document.getElementById('pinterest-link');
 	var tumblrLink = document.getElementById('tumblr-link');
 	var telegramLink = document.getElementById('telegram-link');
 	var trelloLink = document.getElementById('trello-link');
+	var mastodonLink = document.getElementById('mastodon-link');
+	var lemmyLink = document.getElementById('lemmy-link');
 
 	var emailButtonLink = document.getElementById('send-email-link');
 	var copyLink = document.getElementById('copy-link-icon');
@@ -610,8 +686,8 @@ function sharerbox(options) {
 		// Facebook sharer hyperlink
 		var facebookURL = `https://www.facebook.com/sharer/sharer.php?u=${currentUrl}`;
 
-		// Twitter sharer hyperlink
-		var tweetURL = `https://x.com/intent/tweet?text=${customDescription}&url=${currentUrl}`;
+		// Twitter/X sharer hyperlink
+		var twitterX_URL = `https://x.com/intent/post?text=${customDescription}&url=${currentUrl}`;
 
 		// Whatsapp sharer hyperlink
 		var whatsappURL = `whatsapp://send?text=${customDescription}%20${currentUrl}`;
@@ -639,6 +715,16 @@ function sharerbox(options) {
 		// Trello sharer hyperlink
 		var trelloURL = `https://trello.com/add-card?url=${currentUrl}&name=${customDescription}&desc=${currentUrl}&mode=popup`;
 
+		
+		// Federated (Fediverse's) Social Networks
+
+			// Mastodon sharer hyperlink
+			var mastodonURL = `https://${fediverseInstances.mastodon}/share?text=${customDescription}&url=${currentUrl}`;
+
+			// Lemmy sharer hyperlink
+			var lemmyURL = `https://${fediverseInstances.lemmy}/create_post?url=${currentUrl}&title=${customDescription}`;
+
+
 		//Email
 		var sendEmailURL = `mailto:?subject=${customDescription}&body=${currentUrl}`;
 
@@ -651,11 +737,11 @@ function sharerbox(options) {
 
 		// Event listeners for Pop-up window opener
 
-		fbLink ? fbLink.onclick = function() {openWindow(facebookURL)} : undefined; // Facebook
+		facebookLink ? facebookLink.onclick = function() {openWindow(facebookURL)} : undefined; // Facebook
 
-		twLink ? twLink.onclick = function() {openWindow(tweetURL)} : undefined; // Twitter
+		twitterX_Link ? twitterX_Link.onclick = function() {openWindow(twitterX_URL)} : undefined; // Twitter/X
 
-		wsLink ? wsLink.onclick = function() {openWindow(whatsappURL)} : undefined; // Whatsapp
+		whatsappLink ? whatsappLink.onclick = function() {openWindow(whatsappURL)} : undefined; // Whatsapp
 
 		redditLink ? redditLink.onclick = function() {openWindow(redditURL)} : undefined; // Reddit
 
@@ -669,16 +755,20 @@ function sharerbox(options) {
 
 		trelloLink ? trelloLink.onclick = function() {openWindow(trelloURL)} : undefined; // Trello
 
+		mastodonLink ? mastodonLink.onclick = function() {openWindow(mastodonURL)} : undefined; // Mastodon
+
+		lemmyLink ? lemmyLink.onclick = function() {openWindow(lemmyURL)} : undefined; // Lemmy
+
 
 	} else if (behavior.match(/(\btab\b|new-tab|new tab)/)) {
 
 		// HREF attributes for new tabs
 
-		fbLink ? fbLink.href = facebookURL : undefined; // Facebook
+		facebookLink ? facebookLink.href = facebookURL : undefined; // Facebook
 
-		twLink ? twLink.href = tweetURL : undefined; // Twitter
+		twitterX_Link ? twitterX_Link.href = twitterX_URL : undefined; // Twitter/X
 
-		wsLink ? wsLink.href = whatsappURL : undefined; // WhatsApp
+		whatsappLink ? whatsappLink.href = whatsappURL : undefined; // WhatsApp
 
 		redditLink ? redditLink.href = redditURL : undefined; // Reddit
 
@@ -692,6 +782,9 @@ function sharerbox(options) {
 		
 		trelloLink ? (trelloURL = trelloURL.replace('&mode=popup', ''), trelloLink.href = trelloURL) : undefined; // Trello
 
+		mastodonLink ? mastodonLink.href = mastodonURL : undefined; // Mastodon
+
+		lemmyLink ? lemmyLink.href = lemmyURL : undefined; // Lemmy
 	}
 
 	// Email button href attribute
