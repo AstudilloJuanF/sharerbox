@@ -9,9 +9,9 @@ Free minimalist and lightweight JavaScript-based social-media sharer for website
 
  SharerBox is a free, minimalistic and lightweight JavaScript-Based social-media sharebar feature developed to provide fast, easy out-of-the-box social-media sharing integration to websites while eliminating the need for loading heavy or bulky third-party social sharing APIs, which affect user privacy, user experience, bandwith and loading speeds.
 
-  Integrating SharerBox directly on your website for social-media sharing instead of external APIs will help you reduce loading speeds for visitors connected from slow networks, which will improve SEO scores and enhanced user experience, as well as device portability, specially for visitors connected from old computers or low-end devices. Plus, since there is no need for integrating obscure third-party code there is also no unauthorized recolection of private user information derived from using SharerBox.
+  Integrating SharerBox directly on your website for social-media sharing instead of external APIs will help you reduce loading speeds for visitors connected from slow networks, which will improve SEO scores and enhanced user experience, as well as device portability, specially for visitors connected from old computers or low-end devices. Plus, since there is no need for integrating obscure third-party code there is also no unauthorized data collection from private user information used by SharerBox.
 
-  SharerBox is a personal project I work on during my free time, but i've created SharerBox with the intention of making it easy to use for unexperienced users and even easier to customize for developers.
+  SharerBox is a personal project I work on during my free time, but i've created it with the intention of making it very easy to use for unexperienced enthusiasts and even easier to use and customize for web developers.
 
 <h3 align="center"><b>Support:</b></h3>
 
@@ -46,7 +46,7 @@ Free minimalist and lightweight JavaScript-based social-media sharer for website
 ```html
 <script>
 	window.addEventListener('load', function() {
-		sharerbox(/* list your preferred social-networks and other options here, if blank options will be set to default */ );
+		sharerbox( /* list your preferred social-networks and other options here, if blank options will be set to default */ );
 	});
 </script>
 ```
@@ -67,7 +67,7 @@ Example:
  sharerbox({
 	propertyA: 'string',
 	propertyB: 50,
-	propertyC: true
+	propertyC: true,
 	propertyD: {
 		argument: 'lorem ipsum'
 	}
@@ -78,7 +78,7 @@ Example:
 
 * **Social-Networks:** A list of supported social-network names passed as a string (separated by spaces or commas) or as an array.
 
-* **fediverseInstances:** [Not required] You can use this option to change which instances will be used on supported social networks that are part of the Fediverse. Accepts an `[Object]`, argument must be named after a supported Fediverse social network (camel case), the value must be a single string with the domain name of your instance of choice.
+* **fediverseInstances:** [Not required] You can use this option to change which instances will be used on supported social networks that are part of the Fediverse. It accepts an object, argument must be named after a supported Fediverse social network (camel case), the value must be a single string with the domain name of your instance of choice.
 
 * **iconSize:** Sets the size of the icons in pixels. This option accepts numeric values (default size: 45 pixels, accepted size ranges: 25 to 100 pixels).
 
@@ -89,7 +89,7 @@ sharerbox({
 	socialNetworks: 'facebook twitter whatsapp linkedin reddit mastodon lemmy',
 	// fediverse Instances: { platform1: 'domain1.test', platform2: 'domain2.test', /* ... */ }
 	fediverseInstances: {
-		mastodon: 'mastodon.social'
+		mastodon: 'mastodon.social',
 		lemmy: 'lemmy.ml'
 	},
 	// Icon size: number
@@ -129,7 +129,7 @@ Full Example:
 			socialNetworks: 'facebook twitter whatsapp linkedin reddit mastodon lemmy',
 			// fediverse Instances: { platform1: 'domain1.test', platform2: 'domain2.test', /* ... */ }
 			fediverseInstances: {
-				mastodon: 'mastodon.social'
+				mastodon: 'mastodon.social',
 				lemmy: 'lemmy.ml'
 			},
 			// Icon size: number
