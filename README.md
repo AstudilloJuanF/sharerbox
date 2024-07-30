@@ -1,9 +1,9 @@
 # Sharerbox
 
 Free minimalist and lightweight JavaScript-based social-media sharer for websites.
-
+<p align="center"><b>Version:</b> <span id="sharerbox-semantic-version-number">0.11.0</span></p>
 <p align="center"><a href="https://astudillojuanf.github.io/sharerbox/" target="_blank"><img height="250" src="https://astudillojuanf.github.io/sharerbox/images/cover/sharerbox.svg"></a></p>
-<p align="center"><i><b>Version:</b> <span id="sharerbox-semantic-version-number">0.11.0</span></i></p>
+<p align="center"><a href="https://astudillojuanf.github.io/sharerbox/" target="_blank">- Sneak Preview -</a></p>
 
 ## Description
 
@@ -16,17 +16,17 @@ Free minimalist and lightweight JavaScript-based social-media sharer for website
 <h3 align="center"><b>Support:</b></h3>
 
 <p align="center">
-	<img width="50px" height="50px" src="https://astudillojuanf.github.io/sharerbox/icons/facebook-logo.svg">
-	<img width="50px" height="50px" src="https://astudillojuanf.github.io/sharerbox/icons/whatsapp-icon-soft-square.svg">
-	<img width="50px" height="50px" src="https://astudillojuanf.github.io/sharerbox/icons/linkedin-logo.svg">
-	<img width="50px" height="50px" src="https://astudillojuanf.github.io/sharerbox/icons/twitter-x-icon-soft-square.svg">
-	<img width="50px" height="50px" src="https://astudillojuanf.github.io/sharerbox/icons/reddit-icon-soft-square.svg">
-	<img width="50px" height="50px" src="https://astudillojuanf.github.io/sharerbox/icons/pinterest-icon-soft-square.svg">
-	<img width="50px" height="50px" src="https://astudillojuanf.github.io/sharerbox/icons/tumblr-icon-soft-square.svg">
-	<img width="50px" height="50px" src="https://astudillojuanf.github.io/sharerbox/icons/telegram-icon-soft-square.svg">
-	<img width="50px" height="50px" src="https://astudillojuanf.github.io/sharerbox/icons/trello-logo.svg">
-	<img width="50px" height="50px" src="https://astudillojuanf.github.io/sharerbox/icons/mastodon-icon-soft-square.svg">
-	<img width="50px" height="50px" src="https://astudillojuanf.github.io/sharerbox/icons/lemmy-icon-soft-square.svg">
+	<img width="50px" height="50px" src="https://astudillojuanf.github.io/sharerbox/icons/facebook-logo.svg" title="Facebbok" />
+	<img width="50px" height="50px" src="https://astudillojuanf.github.io/sharerbox/icons/whatsapp-icon-soft-square.svg" title="WhatsApp" />
+	<img width="50px" height="50px" src="https://astudillojuanf.github.io/sharerbox/icons/linkedin-logo.svg" title="LinkedIn" />
+	<img width="50px" height="50px" src="https://astudillojuanf.github.io/sharerbox/icons/twitter-x-icon-soft-square.svg" title="X (Twitter)" />
+	<img width="50px" height="50px" src="https://astudillojuanf.github.io/sharerbox/icons/reddit-icon-soft-square.svg" title="Reddit" />
+	<img width="50px" height="50px" src="https://astudillojuanf.github.io/sharerbox/icons/pinterest-icon-soft-square.svg" title="Pinterest" />
+	<img width="50px" height="50px" src="https://astudillojuanf.github.io/sharerbox/icons/tumblr-icon-soft-square.svg" title="Tumblr" />
+	<img width="50px" height="50px" src="https://astudillojuanf.github.io/sharerbox/icons/telegram-icon-soft-square.svg" title="Telegram" />
+	<img width="50px" height="50px" src="https://astudillojuanf.github.io/sharerbox/icons/trello-logo.svg" title="Trello" />
+	<img width="50px" height="50px" src="https://astudillojuanf.github.io/sharerbox/icons/mastodon-icon-soft-square.svg" title="Mastodon" />
+	<img width="50px" height="50px" src="https://astudillojuanf.github.io/sharerbox/icons/lemmy-icon-soft-square.svg" title="Lemmy" />
 </p>
 
 ## Installation:
