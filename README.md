@@ -11,12 +11,12 @@ Free minimalist and lightweight JavaScript-based social-media sharer for website
 
   Integrating SharerBox directly on your website for social-media sharing instead of external APIs will help you reduce loading speeds for visitors connected from slow networks, which will improve SEO scores and enhanced user experience, as well as device portability, specially for visitors connected from old computers or low-end devices. Plus, since there is no need for integrating obscure third-party code there is also no unauthorized data collection from private user information used by SharerBox.
 
-  SharerBox is a personal project I work on during my free time, but i've created it with the intention of making it very easy to use for unexperienced enthusiasts and even easier to use and customize for web developers.
+  SharerBox is a personal project I work on during my free time, but i've created it with the intention of making it very easy to use for inexperienced enthusiasts and even easier to use and customize for web developers.
 
 <h3 align="center"><b>Support:</b></h3>
 
 <p align="center">
-	<img width="50px" height="50px" src="https://astudillojuanf.github.io/sharerbox/icons/facebook-logo.svg" title="Facebbok" />
+	<img width="50px" height="50px" src="https://astudillojuanf.github.io/sharerbox/icons/facebook-logo.svg" title="Facebook" />
 	<img width="50px" height="50px" src="https://astudillojuanf.github.io/sharerbox/icons/whatsapp-icon-soft-square.svg" title="WhatsApp" />
 	<img width="50px" height="50px" src="https://astudillojuanf.github.io/sharerbox/icons/linkedin-logo.svg" title="LinkedIn" />
 	<img width="50px" height="50px" src="https://astudillojuanf.github.io/sharerbox/icons/twitter-x-icon-soft-square.svg" title="X (Twitter)" />
